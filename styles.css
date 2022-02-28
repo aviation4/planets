@@ -1,0 +1,77 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.hamburger__planet {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+}
+
+.planet__circle {
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+}
+
+body {
+  background-color: #070724;
+  color: white;
+}
+
+hr {
+  opacity: 20%;
+  border-top: 1px solid white;
+  border-bottom: none;
+
+}
+
+.topnav__hamburger hr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+h1 {
+  font-family: "Antonio", "sans-serif";
+  font-size: 80px;
+  line-height: 1.2875em;
+}
+
+
+h2 {
+  font-family: "Antonio", "sans-serif";
+  font-size: 40px;
+  line-height: 1.3em;
+  //letter-spacing: -1.5em;
+}
+
+
+h3 {
+  font-family: "Spartan", "sans-serif";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2em;
+  letter-spacing: 2.6px;
+  color: white;
+}
+
+h4 {
+  font-family: "Spartan", "sans-serif";
+  font-weight: 700;
+  font-size: 11px;
+  line-height: 2.27em;
+  letter-spacing: 1em;
+}
+
+.title {
+  font-family: "Antonio", "sans-serif";
+  font-size: 40px;
+  line-height: 1.3em;
+
+  margin: 16px 24px;
+}
