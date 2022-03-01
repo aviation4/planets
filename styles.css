@@ -6,11 +6,64 @@
   margin: 0;
 }
 
+.topnav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 24px;
+}
+
+.topnav__hamburger {
+  display: none;
+}
+
+.secondarynav {
+  display: flex;
+  justify-content: space-around;
+  margin: 17px 0;
+}
+
+.secondarynav__header {
+  padding: 20px 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 9px;
+  opacity: 0.5;
+}
+
+.secondarynav__header:hover {
+  transition: 200ms all;
+  opacity: 1;
+    border-bottom: 4px solid #419EBB;
+}
+
+.secondarynav__header--enabled {
+  transition: 200ms all;
+  border-bottom: 4px solid #419EBB;
+}
+
+.fa-bars {
+  color: white;
+  transform: scaleX(1.2);
+}
+
+.fa-bars--enabled {
+  opacity: 0.25;
+}
+
 .hamburger__planet {
   display: flex;
   align-items: center;
   text-decoration: none;
+  justify-content: space-between;
+}
 
+.hamburger__planet:first-of-type {
+  margin-top: 20px;
+}
+
+.hamburger__planet:last-of-type {
+  margin-bottom: 64px;
 }
 
 .planet__circle {
@@ -25,7 +78,7 @@ body {
 }
 
 hr {
-  opacity: 20%;
+  opacity: 0.2;
   border-top: 1px solid white;
   border-bottom: none;
 
@@ -34,18 +87,21 @@ hr {
 .topnav__hamburger hr {
   margin-left: 20px;
   margin-right: 20px;
+  opacity: 0.1;
 }
 
 h1 {
   font-family: "Antonio", "sans-serif";
   font-size: 80px;
   line-height: 1.2875em;
+  font-weight: normal;
 }
 
 
 h2 {
   font-family: "Antonio", "sans-serif";
   font-size: 40px;
+  font-weight: normal;
   line-height: 1.3em;
   //letter-spacing: -1.5em;
 }
@@ -72,6 +128,55 @@ h4 {
   font-family: "Antonio", "sans-serif";
   font-size: 40px;
   line-height: 1.3em;
+}
 
-  margin: 16px 24px;
+.path {
+  width: 10px;
+	height: 10px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(45deg);
+  margin-right: 20px;
+  opacity: 0.4;
+}
+
+.planet__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.planet-icon {
+  display: block;
+  height: 111px;
+  margin: 15vh auto;
+  text-align: center;
+}
+
+.main-section__title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.main-section__paragraph {
+  font-family: "Spartan", "sans-serif";
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 2em;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.main-section__paragraph--source {
+  font-size: 12px;
+  opacity: 0.5;
+  text-decoration: underline;
+}
+
+.main-section {
+  margin: 28px 24px;
+}
+
+main {
+  background-image: url(./assets/background-stars.svg);
 }

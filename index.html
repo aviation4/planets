@@ -11,60 +11,140 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap" rel="stylesheet">
 
+  <script src="https://kit.fontawesome.com/232e89c80e.js" crossorigin="anonymous"></script>
   <title>Frontend Mentor | Planets fact site</title>
+
 </head>
 <body>
   <nav class="topnav">
     <h1 class="title">THE PLANETS</h1>
-    <hr>
-    <div id="hamburger" class="topnav__hamburger">
+    <a id="hamburger__button">
+      <i class="fa-solid fa-bars fa-lg"></i>
+    </a>
+  </nav>
+  <hr>
+  <div id="hamburger__menu" class="topnav__hamburger">
 
-    
-      <a href="#" class="hamburger__planet">
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
         <svg class="planet__circle">
           <circle cx="10" cy="10" r="10" fill="#DEF4FC"></circle>
         </svg>
         <h3>MERCURY</h3>
-      </a>
-      <hr>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
 
-      <a href="#" class="hamburger__planet">
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
         <svg class="planet__circle">
           <circle cx="10" cy="10" r="10" fill="#F7CC7F"></circle>
         </svg>
         <h3>VENUS</h3>
-      </a>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
 
-      <a href="#" class="hamburger__planet">
+
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
         <svg class="planet__circle">
           <circle cx="10" cy="10" r="10" fill="#545BFE"></circle>
         </svg>
         <h3>EARTH</h3>
-      </a>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
 
-      <a href="#" class="hamburger__planet">
+
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
         <svg class="planet__circle">
           <circle cx="10" cy="10" r="10" fill="#FF6A45"></circle>
         </svg>
         <h3>MARS</h3>
-      </a>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
 
-      <a href="#">Jupiter</a>
-      <a href="#">Saturn</a>
-      <a href="#">Uranus</a>
-      <a href="#">Neptune</a>
-    </div>
+
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
+        <svg class="planet__circle">
+          <circle cx="10" cy="10" r="10" fill="#ECAD7A"></circle>
+        </svg>
+        <h3>JUPITER</h3>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
+
+
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
+        <svg class="planet__circle">
+          <circle cx="10" cy="10" r="10" fill="#FCCB6B"></circle>
+        </svg>
+        <h3>SATURN</h3>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
+
+
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
+        <svg class="planet__circle">
+          <circle cx="10" cy="10" r="10" fill="#65F0D5"></circle>
+        </svg>
+        <h3>URANUS</h3>
+      </div>
+      <div class="path"></div>
+    </a>
+    <hr>
+
+
+    <a href="#" class="hamburger__planet">
+      <div class="planet__container">
+        <svg class="planet__circle">
+          <circle cx="10" cy="10" r="10" fill="#497EFA"></circle>
+        </svg>
+        <h3>NEPTUNE</h3>
+      </div>
+      <div class="path"></div>
+    </a>
+
+  </div>
+  <nav class="secondarynav">
+    <h3><a href="#" class="secondarynav__header">OVERVIEW</a></h3>
+    <h3><a href="#" class="secondarynav__header">STRUCTURE</a></h3>
+    <h3><a href="#" class="secondarynav__header">SURFACE</a></h3>
   </nav>
-  Mercury
+  <hr>
+  <main>
+    <img class="planet-icon" src="./assets/planet-mercury.svg" alt="">
+    <div class="main-section">
 
-  <!-- Overview Content Start -->
+      <h2 class="main-section__title">MERCURY</h2>
 
-  Mercury is the smallest planet in the Solar System and the closest
-  to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
-  shortest of all the Sun's planets. Mercury is one of four terrestrial
-  planets in the Solar System, and is a rocky body like Earth.
+      <!-- Overview Content Start -->
 
-  Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet) -->
+      <p class="main-section__paragraph">
+        Mercury is the smallest planet in the Solar System and the closest
+        to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
+        shortest of all the Sun's planets. Mercury is one of four terrestrial
+        planets in the Solar System, and is a rocky body like Earth.
+      </p>
+
+      <p class="main-section__paragraph main-section__paragraph--source">Source : <strong>Wikipedia</strong> <i class="fa-solid fa-square-arrow-up-right"></i></p> <!-- URL: https://en.wikipedia.org/wiki/Mercury_(planet) -->
+
+    </div>
+
+
 
   <!-- Overview Content End -->
 
@@ -105,5 +185,7 @@
 
   Average Temp.
   430°c
+  </main>
 </body>
+  <script src="./index.js" type="text/javascript"></script>
 </html>
