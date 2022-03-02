@@ -1,5 +1,6 @@
 main {
   background-image: url(../../assets/background-stars.svg);
+  background-repeat: repeat;
 }
 
 
@@ -20,4 +21,19 @@ main {
 
 .main__text {
   margin: 28px 24px;
+}
+
+
+.main__text--overview {
+  display: block;
+}
+
+
+.main__text--structure {
+  display: none;
+}
+
+
+.main__text--surface {
+  display: none;
 }

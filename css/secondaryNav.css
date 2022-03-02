@@ -14,10 +14,11 @@
 .secondaryNav__header:hover {
   transition: 200ms all;
   opacity: 1;
-    border-bottom: 4px solid #419EBB;
+  border-bottom: 4px solid #419EBB;
 }
 
 .secondaryNav__header--enabled {
+  opacity: 1;
   transition: 200ms all;
   border-bottom: 4px solid #419EBB;
 }

@@ -20,6 +20,12 @@
   text-decoration: underline;
 }
 
+
+.text__paragraph a {
+  color: inherit;
+}
+
+
 .text__paragraph--source {
   font-size: 12px;
   opacity: 0.5;
