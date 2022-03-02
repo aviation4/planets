@@ -1,0 +1,18 @@
+.topNav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 16px 24px;
+}
+
+
+.topNav__hamburger {
+  display: none;
+}
+
+
+.topNav__hamburger hr {
+  margin-left: 20px;
+  margin-right: 20px;
+  opacity: 0.1;
+}
