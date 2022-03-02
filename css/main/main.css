@@ -1,6 +1,7 @@
 main {
   background-image: url(../../assets/background-stars.svg);
   background-repeat: repeat;
+  padding-bottom: 30px;
 }
 
 
@@ -36,4 +37,9 @@ main {
 
 .main__text--surface {
   display: none;
+}
+
+.main__table {
+  padding: 30px 24px;
+  width: 100%;
 }

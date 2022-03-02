@@ -1,0 +1,29 @@
+.table__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 9px 24px 13px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 8px;
+}
+
+
+.table__headerText {
+  font-family: "Spartan", "sans-serif";
+  font-weight: bold;
+  font-size: 8px;
+  line-height: 16px;
+  opacity: 0.5;
+  color: white;
+  text-transform: uppercase;
+}
+
+
+.table__descriptionText {
+  font-family: "Antonio", "sans-serif";
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 26px;
+  color: white;
+  text-transform: uppercase;
+}
