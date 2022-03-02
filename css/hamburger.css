@@ -1,0 +1,66 @@
+.hamburger__buttonClass {
+  color: white;
+  transform: scaleX(1.2);
+}
+
+.hamburger__buttonClass:hover {
+  opacity: 0.7;
+  transition: 200ms;
+}
+
+
+.hamburger__buttonClass--enabled {
+  opacity: 0.25;
+}
+
+
+.hamburger__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.hamburer__planetName {
+  font-family: "Spartan", "sans-serif";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2em;
+  letter-spacing: 2.6px;
+  color: white;
+}
+
+
+.hamburger__planet {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: space-between;
+}
+
+.hamburger__planet:first-of-type {
+  margin-top: 20px;
+}
+
+
+.hamburger__planet:last-of-type {
+  margin-bottom: 64px;
+}
+
+
+.hamburger__colorCircle {
+  width: 20px;
+  height: 20px;
+  margin: 20px;
+}
+
+
+.hamburger__path {
+  width: 10px;
+	height: 10px;
+  border-top: 1px solid white;
+  border-right: 1px solid white;
+  transform: rotate(45deg);
+  margin-right: 20px;
+  opacity: 0.4;
+}

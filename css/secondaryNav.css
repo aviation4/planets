@@ -1,0 +1,29 @@
+.secondaryNav {
+  display: flex;
+  justify-content: space-around;
+  margin: 17px 0;
+}
+
+.secondaryNav__header {
+  padding: 20px 5px;
+  color: white;
+  text-decoration: none;
+  font-size: 9px;
+  opacity: 0.5;
+  font-family: "Spartan", "sans-serif";
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 2em;
+  letter-spacing: 2.6px;
+}
+
+.secondaryNav__header:hover {
+  transition: 200ms all;
+  opacity: 1;
+    border-bottom: 4px solid #419EBB;
+}
+
+.secondaryNav__header--enabled {
+  transition: 200ms all;
+  border-bottom: 4px solid #419EBB;
+}

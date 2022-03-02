@@ -3,11 +3,11 @@ const hamburgerMenu = document.getElementById("hamburger__menu");
 
 const toggleHamburgerMenu = () => {
 
-  if (hamburgerButton.classList.includes("fa-bars--enabled")){
-    hamburgerButton.classList.remove("fa-bars--enabled");
+  if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
+    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
     hamburgerMenu.style.display = "none";
   } else {
-    hamburgerButton.classList.add("fa-bars--enabled");
+    hamburgerButton.classList.add("hamburger__buttonClass--enabled");
     hamburgerMenu.style.display = "block";
   }
 
