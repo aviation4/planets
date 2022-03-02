@@ -27,7 +27,9 @@ hr {
 
 .title {
   font-family: "Antonio", "sans-serif";
-  font-size: 40px;
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
   line-height: 1.3em;
 }
 
