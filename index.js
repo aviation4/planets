@@ -2,6 +2,8 @@ const hamburgerButton = document.getElementById("hamburger__button");
 const hamburgerMenu = document.getElementById("hamburger__menu");
 const main = document.getElementById("main");
 
+const hamburgerVenus = document.getElementById("hamburgerVenus");
+
 const overviewButton = document.getElementById("overviewButton");
 const structureButton = document.getElementById("structureButton");
 const surfaceButton = document.getElementById("surfaceButton");
@@ -14,12 +16,11 @@ const surfaceSection = document.getElementById("surfaceSection");
 
 
 
+
 const toggleHamburgerMenu = () => {
 
   if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
-    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
-    hamburgerMenu.style.display = "none";
-    main.style.display = "block";
+
 
   } else {
     hamburgerButton.classList.add("hamburger__buttonClass--enabled");
@@ -27,6 +28,12 @@ const toggleHamburgerMenu = () => {
     main.style.display = "none";
 
   }
+
+  hamburgerVenus.addEventListener("click", function () {
+    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
+    hamburgerMenu.style.display = "none";
+    main.style.display = "block";
+  })
 
 }
 

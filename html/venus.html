@@ -4,60 +4,195 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+  <link rel="stylesheet" href="../css/index.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500&family=Spartan:wght@400;700&display=swap" rel="stylesheet">
+
+  <script src="https://kit.fontawesome.com/232e89c80e.js" crossorigin="anonymous"></script>
   <title>Frontend Mentor | Planets fact site</title>
+
 </head>
 <body>
-  Venus
+  <nav class="topNav">
+    <a class="title" href="./index.html"><h1>THE PLANETS</h1></a>
+    <a id="hamburger__button">
+      <i class="fa-solid fa-bars fa-lg hamburger__buttonClass"></i>
+    </a>
+  </nav>
+  <hr>
+  <div id="hamburger__menu" class="topNav__hamburger">
 
-  <!-- Overview Content Start -->
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#DEF4FC"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">MERCURY</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  Venus is the second planet from the Sun. It is named after the 
-  Roman goddess of love and beauty. As the brightest natural object 
-  in Earth's night sky after the Moon, Venus can cast shadows and 
-  can be, on rare occasions, visible to the naked eye in broad daylight.
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#F7CC7F"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">VENUS</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Venus -->
 
-  <!-- Overview Content End -->
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#545BFE"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">EARTH</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  <!-- Internal Structure Content Start -->
 
-  The similarity in size and density between Venus and Earth suggests 
-  they share a similar internal structure: a core, mantle, and crust. 
-  Like that of Earth, Venusian core is most likely at least partially 
-  liquid because the two planets have been cooling at about the same rate.
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#FF6A45"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">MARS</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Venus#Internal_structure -->
 
-  <!-- Internal Structure Content End -->
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#ECAD7A"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">JUPITER</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  <!-- Surface Geology Content Start -->
 
-  Much of the Venusian surface appears to have been shaped by volcanic activity. 
-  Venus has several times as many volcanoes as Earth, and it has 167 large 
-  volcanoes that are over 100 km (60 mi) across. The only volcanic complex 
-  of this size on Earth is the Big Island of Hawaii.
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#FCCB6B"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">SATURN</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  Source : Wikipedia <!-- URL: https://en.wikipedia.org/wiki/Venus#Surface_geology -->
 
-  <!-- Surface Geology Content End -->
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#65F0D5"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">URANUS</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
+    <hr>
 
-  01 Overview
-  02 Internal Structure
-  03 Surface Geology
 
-  Rotation Time
-  243 Days
+    <a href="#" class="hamburger__planet">
+      <div class="hamburger__content">
+        <svg class="hamburger__colorCircle">
+          <circle cx="10" cy="10" r="10" fill="#497EFA"></circle>
+        </svg>
+        <h3 class="hamburer__planetName">NEPTUNE</h3>
+      </div>
+      <div class="hamburger__path"></div>
+    </a>
 
-  Revolution Time
-  224.7 Days
+  </div>
 
-  Radius
-  6,051.8 KM
+  <main id="main">
+    <nav id="main__secondaryNav" class="main__secondaryNav ">
+      <h3><a id="overviewButton" href="#" class="secondaryNav__header secondaryNav__header--enabled">OVERVIEW</a></h3>
+      <h3><a id="structureButton" href="#" class="secondaryNav__header">STRUCTURE</a></h3>
+      <h3><a id="surfaceButton" href="#" class="secondaryNav__header">SURFACE</a></h3>
+    </nav>
+    <hr>
+    <img class="main__planetIcon" src="../assets/planet-venus.svg" alt="">
+    <div id="overviewSection" class="main__text main_text--overview">
 
-  Average Temp.
-  471°c
+      <h2 class="text__title">VENUS</h2>
+
+      <p class="text__paragraph">
+        Venus is the second planet from the Sun. It is named after the
+        Roman goddess of love and beauty. As the brightest natural object
+        in Earth's night sky after the Moon, Venus can cast shadows and
+        can be, on rare occasions, visible to the naked eye in broad daylight.
+      </p>
+
+      <p class="text__paragraph text__paragraph--source">Source : <strong>Wikipedia</strong> <a href="https://en.wikipedia.org/wiki/Venus"><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
+
+    </div>
+    <div id="structureSection" class="main__text main__text--structure">
+
+      <h2 class="text__title">MERCURY</h2>
+
+      <p class="text__paragraph">
+        The similarity in size and density between Venus and Earth suggests
+        they share a similar internal structure: a core, mantle, and crust.
+        Like that of Earth, Venusian core is most likely at least partially
+        liquid because the two planets have been cooling at about the same rate.
+      </p>
+
+      <p class="text__paragraph text__paragraph--source">Source : <strong>Wikipedia</strong> <a href="https://en.wikipedia.org/wiki/Venus#Internal_structure"><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
+    </div>
+    <div id="surfaceSection" class="main__text main__text--surface">
+
+      <h2 class="text__title">MERCURY</h2>
+
+      <p class="text__paragraph">
+        Much of the Venusian surface appears to have been shaped by volcanic activity.
+        Venus has several times as many volcanoes as Earth, and it has 167 large
+        volcanoes that are over 100 km (60 mi) across. The only volcanic complex
+        of this size on Earth is the Big Island of Hawaii.
+      </p>
+
+      <p class="text__paragraph text__paragraph--source">Source : <strong>Wikipedia</strong> <a href="https://en.wikipedia.org/wiki/Venus#Surface_geology"><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
+
+    </div>
+
+    <table class="main__table">
+      <tbody>
+        <tr class="table__row">
+          <td class="table__headerText">Rotation Time</td>
+          <td class="table__descriptionText">243 Days</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__headerText">Revolution Time</td>
+          <td class="table__descriptionText">224.7 Days</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__headerText">Radius</td>
+          <td class="table__descriptionText">6,051.8 KM</td>
+        </tr>
+        <tr class="table__row">
+          <td class="table__headerText">Average Temp.</td>
+          <td class="table__descriptionText">471°C</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+  </main>
 </body>
+  <script src="../index.js" type="text/javascript"></script>
 </html>
