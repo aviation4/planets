@@ -1,0 +1,26 @@
+.text__title {
+  text-align: center;
+  margin-bottom: 16px;
+  font-family: "Antonio", "sans-serif";
+  font-size: 40px;
+  font-weight: normal;
+  line-height: 1.3em;
+}
+
+.text__paragraph {
+  font-family: "Spartan", "sans-serif";
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 2em;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.text__paragraph strong {
+  text-decoration: underline;
+}
+
+.text__paragraph--source {
+  font-size: 12px;
+  opacity: 0.5;
+}

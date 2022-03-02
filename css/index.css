@@ -2,3 +2,5 @@
 @import "./topNav.css";
 @import "./secondaryNav.css";
 @import "./hamburger.css";
+@import "./main/main.css";
+@import "./main/main__text.css";
