@@ -1,3 +1,8 @@
+main {
+  background-image: url(../../assets/background-stars.svg);
+}
+
+
 .main__secondaryNav {
   display: flex;
   justify-content: space-around;
