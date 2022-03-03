@@ -1,5 +1,6 @@
-.text__title {
+.planet__title {
   text-align: center;
+  text-transform: uppercase;
   margin-bottom: 16px;
   font-family: "Antonio", "sans-serif";
   font-size: 40px;
@@ -7,7 +8,7 @@
   line-height: 1.3em;
 }
 
-.text__paragraph {
+.planet__paragraph {
   font-family: "Spartan", "sans-serif";
   font-weight: normal;
   font-size: 11px;
@@ -16,17 +17,17 @@
   margin-bottom: 32px;
 }
 
-.text__paragraph strong {
+.planet__paragraph strong {
   text-decoration: underline;
 }
 
 
-.text__paragraph a {
+.planet__paragraph a {
   color: inherit;
 }
 
 
-.text__paragraph--source {
+.planet__paragraph--source {
   font-size: 12px;
   opacity: 0.5;
 }

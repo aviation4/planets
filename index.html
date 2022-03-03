@@ -121,72 +121,56 @@
   </div>
 
   <main id="main">
+
+
     <nav id="main__secondaryNav" class="main__secondaryNav ">
       <h3><a id="overviewButton" href="#" class="secondaryNav__header secondaryNav__header--enabled">OVERVIEW</a></h3>
       <h3><a id="structureButton" href="#" class="secondaryNav__header">STRUCTURE</a></h3>
       <h3><a id="surfaceButton" href="#" class="secondaryNav__header">SURFACE</a></h3>
     </nav>
+
+
     <hr>
-    <img class="main__planetIcon" src="./assets/planet-mercury.svg" alt="">
-    <div id="overviewSection" class="main__text main_text--overview">
 
-      <h2 class="text__title">MERCURY</h2>
+    <div class="main__iconContainer">
+      <img id="main__iconID" class="main__icon" src="" alt="">
+      <img id="main__icon--surfaceID" class="main__icon--surface" src="" alt="">
+    </div>
 
-      <p class="text__paragraph">
-        Mercury is the smallest planet in the Solar System and the closest
-        to the Sun. Its orbit around the Sun takes 87.97 Earth days, the
-        shortest of all the Sun's planets. Mercury is one of four terrestrial
-        planets in the Solar System, and is a rocky body like Earth.
+
+
+
+
+
+    <div class="main__planet">
+
+      <h2 id="planet__titleID" class="planet__title"></h2>
+
+      <p id="planet__paragraphID" class="planet__paragraph">
       </p>
 
-      <p class="text__paragraph text__paragraph--source">Source : <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank"><strong>Wikipedia</strong><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
+      <p class="planet__paragraph planet__paragraph--source">Source : <a id="planet__sourceID" href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank"><strong>Wikipedia</strong><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
 
     </div>
-    <div id="structureSection" class="main__text main__text--structure">
 
-      <h2 class="text__title">MERCURY</h2>
-
-      <p class="text__paragraph">
-        Mercury appears to have a solid silicate crust and mantle overlying a
-        solid, iron sulfide outer core layer, a deeper liquid core layer, and
-        a solid inner core. The planet's density is the second highest in the
-        Solar System at 5.427 g/cm3 , only slightly less than Earth's density.
-      </p>
-
-      <p class="text__paragraph text__paragraph--source">Source : <a href="https://en.wikipedia.org/wiki/Mercury_(planet)#Internal_structure" target="_blank"><strong>Wikipedia</strong><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
-    </div>
-    <div id="surfaceSection" class="main__text main__text--surface">
-
-      <h2 class="text__title">MERCURY</h2>
-
-      <p class="text__paragraph">
-        Mercury's surface is similar in appearance to that of the Moon, showing
-        extensive mare-like plains and heavy cratering, indicating that it has
-        been geologically inactive for billions of years. It is more heterogeneous
-        than either Mars's or the Moon’s.
-      </p>
-
-      <p class="text__paragraph text__paragraph--source">Source : <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank"><strong>Wikipedia</strong><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
-
-    </div>
 
     <table class="main__table">
       <tbody>
         <tr class="table__row">
           <td class="table__headerText">Rotation Time</td>
-          <td class="table__descriptionText">58.6 Days</td>
+          <td id="rotationTime" class="table__descriptionText"></td>
         </tr>
         <tr class="table__row">
           <td class="table__headerText">Revolution Time</td>
-          <td class="table__descriptionText">87.97 Days</td>
+          <td id="revolutionTime" class="table__descriptionText"></td>
         </tr>
         <tr class="table__row">
           <td class="table__headerText">Radius</td>
-          <td class="table__descriptionText">2,439.7 KM</td>
+          <td id="radius" class="table__descriptionText"></td>
         </tr>
         <tr class="table__row">
           <td class="table__headerText">Average Temp.</td>
-          <td class="table__descriptionText">430°C</td>
+          <td id="averageTemp" class="table__descriptionText"></td>
         </tr>
       </tbody>
     </table>
@@ -194,5 +178,5 @@
 
   </main>
 </body>
-  <script src="./index.js" type="text/javascript"></script>
+  <script src="./js/index.js" type="text/javascript"></script>
 </html>

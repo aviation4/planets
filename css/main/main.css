@@ -11,33 +11,32 @@ main {
   margin: 17px 0;
 }
 
+.main__iconContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
 
-.main__planetIcon {
+
+.main__icon {
   display: block;
   height: 111px;
   margin: 98px auto;
   text-align: center;
 }
 
+.main__icon--surface {
+  display: block;
+  position: absolute;
+  height: 90px;
+  bottom: 40px;
+}
 
-.main__text {
+
+.main__planet {
   margin: 28px 24px;
 }
 
-
-.main__text--overview {
-  display: block;
-}
-
-
-.main__text--structure {
-  display: none;
-}
-
-
-.main__text--surface {
-  display: none;
-}
 
 .main__table {
   padding: 30px 24px;
