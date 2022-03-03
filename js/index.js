@@ -2,9 +2,18 @@ const hamburgerButton = document.getElementById("hamburger__button");
 const hamburgerMenu = document.getElementById("hamburger__menu");
 const main = document.getElementById("main");
 
-const actualPlanetIndex = 0;
+let actualPlanetIndex = 0;
+let actualSectionName = "overview";
 
+const hamburgerMercury = document.getElementById("hamburgerMercury");
 const hamburgerVenus = document.getElementById("hamburgerVenus");
+const hamburgerEarth = document.getElementById("hamburgerEarth");
+const hamburgerMars = document.getElementById("hamburgerMars");
+const hamburgerJupiter = document.getElementById("hamburgerJupiter");
+const hamburgerSaturn = document.getElementById("hamburgerSaturn");
+const hamburgerUranus = document.getElementById("hamburgerUranus");
+const hamburgerNeptune = document.getElementById("hamburgerNeptune");
+const hamburgerPlanetsArray = [hamburgerMercury, hamburgerVenus, hamburgerEarth, hamburgerMars, hamburgerJupiter, hamburgerSaturn, hamburgerUranus, hamburgerNeptune];
 
 const overviewButton = document.getElementById("overviewButton");
 const structureButton = document.getElementById("structureButton");
@@ -48,54 +57,55 @@ const toggleHamburgerMenu = () => {
 }
 
 
-const renderInitialData = (jsonResponse) => {
+const renderFullData = (jsonResponse) => {
 
+  console.log(actualSectionName);
+  console.log(actualPlanetIndex);
 
-  main__iconID.src= jsonResponse[0].images.planet;
-  planet__titleID.innerHTML = jsonResponse[0].name;
-  planet__paragraphID.innerHTML = jsonResponse[0].overview.content;
-  planet__sourceID.href = jsonResponse[0].overview.source;
+  if (actualSectionName == "overview"){
 
-  rotationTime.innerHTML = jsonResponse[0].rotation;
-  revolutionTime.innerHTML = jsonResponse[0].revolution;
-  radius.innerHTML = jsonResponse[0].radius;
-  averageTemp.innerHTML = jsonResponse[0].temperature;
-
-}
-
-
-const renderData = (jsonResponse, sectionName) => {
-
-  if (sectionName == "overview"){
-
-    main__iconID.src= jsonResponse[0].images.planet;
+    main__iconID.src= jsonResponse[actualPlanetIndex].images.planet;
     main__iconSurfaceID.src= "";
 
-  } else if (sectionName == "structure"){
+  } else if (actualSectionName == "structure"){
 
-    main__iconID.src= jsonResponse[0].images.internal;
+    main__iconID.src= jsonResponse[actualPlanetIndex].images.internal;
     main__iconSurfaceID.src= "";
 
-  } else if (sectionName == "surface"){
+  } else if (actualSectionName == "surface"){
 
-    main__iconID.src= jsonResponse[0].images.planet;
-    main__iconSurfaceID.src= jsonResponse[0].images.geology;
+    main__iconID.src= jsonResponse[actualPlanetIndex].images.planet;
+    main__iconSurfaceID.src= jsonResponse[actualPlanetIndex].images.geology;
 
   }
 
-  if (sectionName == "surface"){
-    sectionName = "geology";
+  if (actualSectionName == "surface"){
+    actualSectionName = "geology";
   }
 
+  console.log(actualPlanetIndex);
   planet__titleID.innerHTML = jsonResponse[actualPlanetIndex].name;
-  planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][sectionName].content;
-  planet__sourceID.href = jsonResponse[actualPlanetIndex][sectionName].source;
+  planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][actualSectionName].content;
+  planet__sourceID.href = jsonResponse[actualPlanetIndex][actualSectionName].source;
+
+  rotationTime.innerHTML = jsonResponse[actualPlanetIndex].rotation;
+  revolutionTime.innerHTML = jsonResponse[actualPlanetIndex].revolution;
+  radius.innerHTML = jsonResponse[actualPlanetIndex].radius;
+  averageTemp.innerHTML = jsonResponse[actualPlanetIndex].temperature;
+
+
+  if (actualSectionName == "geology"){
+    actualSectionName = "surface";
+  }
 
 }
 
 
 
-const fetchInitialData = () => {
+
+
+function fetchData () {
+
 
   fetch("https://raw.githubusercontent.com/aviation4/planets/main/data.json")
     .then(response => {
@@ -107,70 +117,51 @@ const fetchInitialData = () => {
   }, networkError => {
     console.log(networkError.message);
   }).then(jsonResponse => {
-    renderInitialData(jsonResponse);
+
+      renderFullData(jsonResponse);
+
   })
 
 }
-
-
-const fetchData = (sectionName) => {
-
-  fetch("https://raw.githubusercontent.com/aviation4/planets/main/data.json")
-    .then(response => {
-      if (response.ok){
-          console.log("success");
-          return response.json();
-      }
-      throw new Error ("Request failed!");
-  }, networkError => {
-    console.log(networkError.message);
-  }).then(jsonResponse => {
-    renderData(jsonResponse, sectionName);
-  })
-
-}
-
 
 
 
 const toggleSections = (el, i) => {
 
 
-  const sectionName = el.innerHTML.toLowerCase();
+  actualSectionName = el.innerHTML.toLowerCase();
+  console.log(actualSectionName);
 
-  fetchData(sectionName);
+  fetchData();
 
 }
 
 
-const toggleSectionsNavigation = (el, i) => {
+const toggleNavigationBar = (el, i) => {
 
 
   switch(i){
     case 0:
 
+      activeSectionIndex = 0;
       overviewButton.classList.add(activeSectionClass);
-
       structureButton.classList.remove(activeSectionClass);
-
       surfaceButton.classList.remove(activeSectionClass);
       break;
 
     case 1:
 
+      activeSectionIndex = 1;
       overviewButton.classList.remove(activeSectionClass);
-
       structureButton.classList.add(activeSectionClass);
-
       surfaceButton.classList.remove(activeSectionClass);
       break;
 
     case 2:
 
+      activeSectionIndex = 2;
       overviewButton.classList.remove(activeSectionClass);
-
       structureButton.classList.remove(activeSectionClass);
-
       surfaceButton.classList.add(activeSectionClass);
       break;
   }
@@ -181,15 +172,31 @@ const toggleSectionsNavigation = (el, i) => {
 
 hamburgerButton.addEventListener("click", toggleHamburgerMenu);
 
+
+
 sectionsArray.forEach((el, i) => {
 
-  console.log(sectionsArray);
-
   el.addEventListener("click", function () {
-    toggleSectionsNavigation(el, i);
+
+    toggleNavigationBar(el, i);
     toggleSections(el, i);
+
   });
 
 })
 
-fetchInitialData();
+
+hamburgerPlanetsArray.forEach((el, i) => {
+
+  el.addEventListener("click", function () {
+
+    toggleHamburgerMenu();
+    actualPlanetIndex = i;
+    fetchData();
+
+  })
+
+})
+
+
+fetchData();
