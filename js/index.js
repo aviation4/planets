@@ -185,7 +185,7 @@ hamburgerPlanetsArray.forEach((el, i) => {
     toggleHamburgerMenu();
     actualPlanetIndex = i;
     sectionClass.style.borderColor = colorPlanetsArray[actualPlanetIndex];
-    sectionClassHover.style.borderColor = colorPlanetsArray[actualPlanetIndex];
+    // sectionClassHover.style.borderColor = colorPlanetsArray[actualPlanetIndex];
     fetchData();
 
   })
