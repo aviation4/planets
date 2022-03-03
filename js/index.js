@@ -14,6 +14,9 @@ const hamburgerSaturn = document.getElementById("hamburgerSaturn");
 const hamburgerUranus = document.getElementById("hamburgerUranus");
 const hamburgerNeptune = document.getElementById("hamburgerNeptune");
 const hamburgerPlanetsArray = [hamburgerMercury, hamburgerVenus, hamburgerEarth, hamburgerMars, hamburgerJupiter, hamburgerSaturn, hamburgerUranus, hamburgerNeptune];
+const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
+const sectionClass = document.querySelector(".secondaryNav__header");
+const sectionClassHover = document.querySelector(".secondaryNav__header:hover");
 
 const overviewButton = document.getElementById("overviewButton");
 const structureButton = document.getElementById("structureButton");
@@ -48,19 +51,10 @@ const toggleHamburgerMenu = () => {
     main.style.display = "none";
   }
 
-  hamburgerVenus.addEventListener("click", function () {
-    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
-    hamburgerMenu.style.display = "none";
-    main.style.display = "block";
-  })
-
 }
 
 
 const renderFullData = (jsonResponse) => {
-
-  console.log(actualSectionName);
-  console.log(actualPlanetIndex);
 
   if (actualSectionName == "overview"){
 
@@ -83,7 +77,6 @@ const renderFullData = (jsonResponse) => {
     actualSectionName = "geology";
   }
 
-  console.log(actualPlanetIndex);
   planet__titleID.innerHTML = jsonResponse[actualPlanetIndex].name;
   planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][actualSectionName].content;
   planet__sourceID.href = jsonResponse[actualPlanetIndex][actualSectionName].source;
@@ -110,7 +103,6 @@ function fetchData () {
   fetch("https://raw.githubusercontent.com/aviation4/planets/main/data.json")
     .then(response => {
       if (response.ok){
-          console.log("success");
           return response.json();
       }
       throw new Error ("Request failed!");
@@ -128,10 +120,7 @@ function fetchData () {
 
 const toggleSections = (el, i) => {
 
-
   actualSectionName = el.innerHTML.toLowerCase();
-  console.log(actualSectionName);
-
   fetchData();
 
 }
@@ -145,6 +134,7 @@ const toggleNavigationBar = (el, i) => {
 
       activeSectionIndex = 0;
       overviewButton.classList.add(activeSectionClass);
+      overviewButton.style.borderColor = colorPlanetsArray[actualPlanetIndex];
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.remove(activeSectionClass);
       break;
@@ -154,6 +144,7 @@ const toggleNavigationBar = (el, i) => {
       activeSectionIndex = 1;
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.add(activeSectionClass);
+      structureButton.style.borderColor = colorPlanetsArray[actualPlanetIndex];
       surfaceButton.classList.remove(activeSectionClass);
       break;
 
@@ -163,6 +154,7 @@ const toggleNavigationBar = (el, i) => {
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.add(activeSectionClass);
+      surfaceButton.style.borderColor = colorPlanetsArray[actualPlanetIndex];
       break;
   }
 
@@ -192,6 +184,8 @@ hamburgerPlanetsArray.forEach((el, i) => {
 
     toggleHamburgerMenu();
     actualPlanetIndex = i;
+    sectionClass.style.borderColor = colorPlanetsArray[actualPlanetIndex];
+    sectionClassHover.style.borderColor = colorPlanetsArray[actualPlanetIndex];
     fetchData();
 
   })
