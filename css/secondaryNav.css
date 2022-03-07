@@ -1,3 +1,18 @@
+.secondaryNav {
+    display: flex;
+    justify-content: space-around;
+    margin: 17px 0;
+}
+
+@media (min-width: 768px){
+
+  .secondaryNav {
+    display: none;
+  }
+
+}
+
+
 .secondaryNav__header {
   padding: 20px 5px;
   color: white;

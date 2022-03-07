@@ -1,6 +1,7 @@
 const hamburgerButton = document.getElementById("hamburger__button");
 const hamburgerMenu = document.getElementById("hamburger__menu");
 const main = document.getElementById("main");
+const secondaryNav = document.getElementById("secondaryNav");
 
 let actualPlanetIndex = 0;
 let actualSectionName = "overview";
@@ -15,8 +16,8 @@ const hamburgerUranus = document.getElementById("hamburgerUranus");
 const hamburgerNeptune = document.getElementById("hamburgerNeptune");
 const hamburgerPlanetsArray = [hamburgerMercury, hamburgerVenus, hamburgerEarth, hamburgerMars, hamburgerJupiter, hamburgerSaturn, hamburgerUranus, hamburgerNeptune];
 const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
-const sectionClass = document.querySelector(".secondaryNav__header");
-const sectionClassHover = document.querySelector(".secondaryNav__header:hover");
+const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
+const sectionClass = document.querySelectorAll(".secondaryNav__header");
 
 const overviewButton = document.getElementById("overviewButton");
 const structureButton = document.getElementById("structureButton");
@@ -44,11 +45,13 @@ const toggleHamburgerMenu = () => {
     hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
     hamburgerMenu.style.display = "none";
     main.style.display = "block";
+    secondaryNav.style.display = "flex";
 
   } else {
     hamburgerButton.classList.add("hamburger__buttonClass--enabled");
     hamburgerMenu.style.display = "block";
     main.style.display = "none";
+    secondaryNav.style.display = "none";
   }
 
 }
@@ -76,6 +79,12 @@ const renderFullData = (jsonResponse) => {
   if (actualSectionName == "surface"){
     actualSectionName = "geology";
   }
+
+
+  sectionClass.forEach(el => {
+    el.style.borderColor = colorNavArray[actualPlanetIndex];
+  })
+  //sectionClassHover.style.borderColor = colorNavArray[actualPlanetIndex];
 
   planet__titleID.innerHTML = jsonResponse[actualPlanetIndex].name;
   planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][actualSectionName].content;
@@ -129,12 +138,15 @@ const toggleSections = (el, i) => {
 const toggleNavigationBar = (el, i) => {
 
 
+  sectionClass.forEach(el => {
+    el.style.borderColor = colorNavArray[actualPlanetIndex];
+  });
+
   switch(i){
     case 0:
 
       activeSectionIndex = 0;
       overviewButton.classList.add(activeSectionClass);
-      overviewButton.style.borderColor = colorPlanetsArray[actualPlanetIndex];
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.remove(activeSectionClass);
       break;
@@ -144,7 +156,6 @@ const toggleNavigationBar = (el, i) => {
       activeSectionIndex = 1;
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.add(activeSectionClass);
-      structureButton.style.borderColor = colorPlanetsArray[actualPlanetIndex];
       surfaceButton.classList.remove(activeSectionClass);
       break;
 
@@ -154,7 +165,6 @@ const toggleNavigationBar = (el, i) => {
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.add(activeSectionClass);
-      surfaceButton.style.borderColor = colorPlanetsArray[actualPlanetIndex];
       break;
   }
 
@@ -184,8 +194,7 @@ hamburgerPlanetsArray.forEach((el, i) => {
 
     toggleHamburgerMenu();
     actualPlanetIndex = i;
-    sectionClass.style.borderColor = colorPlanetsArray[actualPlanetIndex];
-    // sectionClassHover.style.borderColor = colorPlanetsArray[actualPlanetIndex];
+
     fetchData();
 
   })

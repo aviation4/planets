@@ -6,13 +6,26 @@
 }
 
 
-.topNav__hamburger {
+.topNav__planetBar {
   display: none;
+  justify-content: space-around;
+  margin: 27px 52px;
 }
 
 
-.topNav__hamburger hr {
-  margin-left: 20px;
-  margin-right: 20px;
-  opacity: 0.1;
+@media (min-width: 768px){
+
+  .topNav {
+    flex-direction: column;
+  }
+
+
+  .topNav__hamburgerButton {
+    display: none;
+  }
+
+  .topNav__planetBar {
+    display: flex;
+  }
+
 }

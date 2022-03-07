@@ -16,14 +16,27 @@
 
 </head>
 <body>
-  <nav class="topNav">
-    <a class="title" href="./index.html"><h1>THE PLANETS</h1></a>
-    <a id="hamburger__button">
-      <i class="fa-solid fa-bars fa-lg hamburger__buttonClass"></i>
-    </a>
-  </nav>
-  <hr>
-  <div id="hamburger__menu" class="topNav__hamburger">
+  <nav>
+
+    <div class="topNav">
+      <a class="title" href="./index.html"><h1>THE PLANETS</h1></a>
+      <a id="hamburger__button" class="topNav__hamburgerButton">
+        <i class="fa-solid fa-bars fa-lg hamburger__buttonClass"></i>
+      </a>
+      <div class="topNav__planetBar">
+        <h3 class="planetBar__header">MERCURY</h3>
+        <h3 class="planetBar__header">VENUS</h3>
+        <h3 class="planetBar__header">EARTH</h3>
+        <h3 class="planetBar__header">MARS</h3>
+        <h3 class="planetBar__header">JUPTER</h3>
+        <h3 class="planetBar__header">SATURN</h3>
+        <h3 class="planetBar__header">URANUS</h3>
+        <h3 class="planetBar__header">NEPTUNE</h3>
+      </div>
+    </div>
+
+    <hr>
+    <div id="hamburger__menu" class="hamburger">
 
     <a id="hamburgerMercury" href="#" class="hamburger__planet">
       <div class="hamburger__content">
@@ -120,17 +133,17 @@
 
   </div>
 
-  <main id="main">
-
-
-    <nav id="main__secondaryNav" class="main__secondaryNav ">
-      <h3><a id="overviewButton" href="#" class="secondaryNav__header secondaryNav__header--enabled">OVERVIEW</a></h3>
-      <h3><a id="structureButton" href="#" class="secondaryNav__header">STRUCTURE</a></h3>
-      <h3><a id="surfaceButton" href="#" class="secondaryNav__header">SURFACE</a></h3>
-    </nav>
+    <div id="secondaryNav" class="secondaryNav">
+    <h3><a id="overviewButton" href="#" class="secondaryNav__header secondaryNav__header--enabled">OVERVIEW</a></h3>
+    <h3><a id="structureButton" href="#" class="secondaryNav__header">STRUCTURE</a></h3>
+    <h3><a id="surfaceButton" href="#" class="secondaryNav__header">SURFACE</a></h3>
+  </div>
 
 
     <hr>
+  </nav>
+
+  <main id="main">
 
     <div class="main__iconContainer">
       <img id="main__iconID" class="main__icon" src="" alt="">
