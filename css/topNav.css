@@ -5,9 +5,37 @@
   margin: 16px 24px;
 }
 
+@media (min-width: 768px){
+  .topNav {
+    flex-direction: column;
+  }
+}
+
+
+.topNav__title {
+  font-family: "Antonio", "sans-serif";
+  font-size: 22px;
+  text-decoration: none;
+  color: white;
+  line-height: 1.3em;
+  font-weight: normal !important;
+}
+
+@media (min-width: 768px){
+  .topNav__title{
+    margin: 12px auto 28px auto;
+  }
+}
+
 
 .topNav__hamburger {
   display: none;
+}
+
+@media (min-width: 768px){
+  .topNav__hamburgerButton{
+    display: none;
+  }
 }
 
 
@@ -15,4 +43,17 @@
   margin-left: 20px;
   margin-right: 20px;
   opacity: 0.1;
+}
+
+.topNav__planetBar {
+  display: none;
+}
+
+@media (min-width: 768px){
+  .topNav__planetBar {
+    display: flex;
+    width: 100%;
+    margin: 10px auto;
+    justify-content: space-evenly;
+  }
 }
