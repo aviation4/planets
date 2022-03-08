@@ -1,5 +1,4 @@
 .planet__title {
-  text-align: center;
   text-transform: uppercase;
   margin-bottom: 16px;
   font-family: "Antonio", "sans-serif";
@@ -8,12 +7,18 @@
   line-height: 1.3em;
 }
 
+@media (min-width: 768px){
+  .planet__title {
+    font-size: 48px;
+    margin-bottom: 24px;
+  }
+}
+
 .planet__paragraph {
   font-family: "Spartan", "sans-serif";
   font-weight: normal;
   font-size: 11px;
   line-height: 2em;
-  text-align: center;
   margin-bottom: 32px;
 }
 
@@ -30,4 +35,9 @@
 .planet__paragraph--source {
   font-size: 12px;
   opacity: 0.5;
+  margin-bottom: 0;
+}
+
+.fa-square-arrow-up-right {
+  margin-left: 5px;
 }

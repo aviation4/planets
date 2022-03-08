@@ -6,9 +6,21 @@ main {
 
 
 .main__secondaryNav {
-  display: flex;
+  display: none;
   justify-content: space-around;
-  margin: 17px 0;
+  margin: 0 40px;
+  flex-basis: 50%;
+  align-items: center;
+  letter-spacing: 2px;
+}
+
+@media (min-width: 768px){
+
+  .main__secondaryNav {
+    display: flex;
+
+  }
+
 }
 
 .main__iconContainer {
@@ -23,6 +35,15 @@ main {
   margin: 100px auto;
 }
 
+@media (min-width: 768px){
+
+  .main__icon {
+    height: 250px;
+    margin: 180px auto;
+  }
+
+}
+
 .main__icon--surface {
   position: absolute;
   height: 130px;
@@ -32,10 +53,28 @@ main {
 
 .main__planet {
   margin: 28px 24px;
+  text-align: center;
+}
+
+@media (min-width: 768px){
+
+  .main__planet {
+    text-align: left;
+    flex-basis: 50%;
+    margin: 0 40px;
+  }
+
 }
 
 
 .main__table {
-  padding: 30px 24px;
+  padding: 0 24px;
   width: 100%;
+}
+
+@media (min-width: 768px){
+  .main__table {
+    padding: 24px 24px;
+  }
+  }
 }
