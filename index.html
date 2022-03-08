@@ -24,14 +24,14 @@
         <i class="fa-solid fa-bars fa-lg hamburger__buttonClass"></i>
       </a>
       <div class="topNav__planetBar">
-        <h3 class="planetBar__header">MERCURY</h3>
-        <h3 class="planetBar__header">VENUS</h3>
-        <h3 class="planetBar__header">EARTH</h3>
-        <h3 class="planetBar__header">MARS</h3>
-        <h3 class="planetBar__header">JUPTER</h3>
-        <h3 class="planetBar__header">SATURN</h3>
-        <h3 class="planetBar__header">URANUS</h3>
-        <h3 class="planetBar__header">NEPTUNE</h3>
+        <h3 id="topNavMercury" class="planetBar__header">MERCURY</h3>
+        <h3 id="topNavVenus" class="planetBar__header">VENUS</h3>
+        <h3 id="topNavEarth" class="planetBar__header">EARTH</h3>
+        <h3 id="topNavMars" class="planetBar__header">MARS</h3>
+        <h3 id="topNavJupiter" class="planetBar__header">JUPTER</h3>
+        <h3 id="topNavSaturn" class="planetBar__header">SATURN</h3>
+        <h3 id="topNavUranus" class="planetBar__header">URANUS</h3>
+        <h3 id="topNavNeptune" class="planetBar__header">NEPTUNE</h3>
       </div>
     </div>
 
@@ -134,10 +134,10 @@
   </div>
 
     <div id="secondaryNav" class="secondaryNav">
-    <h3><a id="overviewButton" href="#" class="secondaryNav__header secondaryNav__header--enabled">OVERVIEW</a></h3>
-    <h3><a id="structureButton" href="#" class="secondaryNav__header">STRUCTURE</a></h3>
-    <h3><a id="surfaceButton" href="#" class="secondaryNav__header">SURFACE</a></h3>
-  </div>
+      <h3><a id="overviewButton" href="#" class="secondaryNav__header secondaryNav__header--enabled">OVERVIEW</a></h3>
+      <h3><a id="structureButton" href="#" class="secondaryNav__header">STRUCTURE</a></h3>
+      <h3><a id="surfaceButton" href="#" class="secondaryNav__header">SURFACE</a></h3>
+    </div>
 
 
     <hr>
@@ -164,23 +164,24 @@
 
       </div>
 
-      <table class="main__secondaryNav">
+      <div class="main__secondaryNav table__body table__body--secondaryNav">
 
-        <tbody class="table__body table__body--secondaryNav">
-          <tr class="table__row table__row--secondaryNav table__row--enabled">
-            <td class="table__no">01</td>
-            <td class="table__sectionNames">OVERVIEW</td>
-          <tr class="table__row table__row--secondaryNav">
-            <td class="table__no">02</td>
-            <td class="table__sectionNames">INTERNAL STRUCTURE</td>
-          </tr>
-          <tr class="table__row table__row--secondaryNav">
-            <td class="table__no">03</td>
-            <td class="table__sectionNames">SURFACE GEOLOGY</td>
-          </tr>
-        </tbody>
 
-      </table>
+          <div id="overviewButton--table" class="table__row table__row--secondaryNav table__row--enabled">
+            <h3 class="table__no">01</h3>
+            <h3 class="table__sectionNames">OVERVIEW</h3>
+          </div>
+          <div id="structureButton--table" class="table__row table__row--secondaryNav">
+            <h3 class="table__no">02</h3>
+            <h3 class="table__sectionNames">INTERNAL STRUCTURE</h3>
+          </div>
+          <div id="surfaceButton--table" class="table__row table__row--secondaryNav">
+            <h3 class="table__no">03</h3>
+            <h3 class="table__sectionNames">SURFACE GEOLOGY</h3>
+          </div>
+
+
+      </div>
 
     </div>
 

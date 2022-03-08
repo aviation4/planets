@@ -6,6 +6,9 @@ const secondaryNav = document.getElementById("secondaryNav");
 let actualPlanetIndex = 0;
 let actualSectionName = "overview";
 
+const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
+const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
+
 const hamburgerMercury = document.getElementById("hamburgerMercury");
 const hamburgerVenus = document.getElementById("hamburgerVenus");
 const hamburgerEarth = document.getElementById("hamburgerEarth");
@@ -15,15 +18,30 @@ const hamburgerSaturn = document.getElementById("hamburgerSaturn");
 const hamburgerUranus = document.getElementById("hamburgerUranus");
 const hamburgerNeptune = document.getElementById("hamburgerNeptune");
 const hamburgerPlanetsArray = [hamburgerMercury, hamburgerVenus, hamburgerEarth, hamburgerMars, hamburgerJupiter, hamburgerSaturn, hamburgerUranus, hamburgerNeptune];
-const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
-const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
-const sectionClass = document.querySelectorAll(".secondaryNav__header");
 
 const overviewButton = document.getElementById("overviewButton");
 const structureButton = document.getElementById("structureButton");
 const surfaceButton = document.getElementById("surfaceButton");
 const sectionsArray = [overviewButton, structureButton, surfaceButton];
 const activeSectionClass = "secondaryNav__header--enabled";
+const sectionClass = document.querySelectorAll(".secondaryNav__header");
+
+const topNavMercury = document.getElementById("topNavMercury");
+const topNavVenus = document.getElementById("topNavVenus");
+const topNavEarth = document.getElementById("topNavEarth");
+const topNavMars = document.getElementById("topNavMars");
+const topNavJupiter = document.getElementById("topNavJupiter");
+const topNavSaturn = document.getElementById("topNavSaturn");
+const topNavUranus = document.getElementById("topNavUranus");
+const topNavNeptune = document.getElementById("topNavNeptune");
+const topNavPlanetsArray = [topNavMercury, topNavVenus, topNavEarth, topNavMars, topNavJupiter, topNavSaturn, topNavUranus, topNavNeptune];
+
+const overviewButtonTable = document.getElementById("overviewButton--table");
+const structureButtonTable = document.getElementById("structureButton--table");
+const surfaceButtonTable = document.getElementById("surfaceButton--table");
+const sectionsTableArray = [overviewButtonTable, structureButtonTable, surfaceButtonTable];
+
+const activeSectionTableClassName = "table__row--enabled";
 
 const main__iconID = document.getElementById("main__iconID");
 const main__iconSurfaceID = document.getElementById("main__icon--surfaceID");
@@ -59,6 +77,14 @@ const toggleHamburgerMenu = () => {
 
 const renderFullData = (jsonResponse) => {
 
+  /* Unifing section names */
+  if (actualSectionName == "internal structure"){
+    actualSectionName = "structure";
+  } else if (actualSectionName == "surface geology"){
+    actualSectionName = "surface";
+  }
+
+
   if (actualSectionName == "overview"){
 
     main__iconID.src= jsonResponse[actualPlanetIndex].images.planet;
@@ -84,8 +110,9 @@ const renderFullData = (jsonResponse) => {
   sectionClass.forEach(el => {
     el.style.borderColor = colorNavArray[actualPlanetIndex];
   })
-  //sectionClassHover.style.borderColor = colorNavArray[actualPlanetIndex];
 
+  console.log(actualPlanetIndex);
+  console.log(actualSectionName);
   planet__titleID.innerHTML = jsonResponse[actualPlanetIndex].name;
   planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][actualSectionName].content;
   planet__sourceID.href = jsonResponse[actualPlanetIndex][actualSectionName].source;
@@ -109,7 +136,7 @@ const renderFullData = (jsonResponse) => {
 function fetchData () {
 
 
-  fetch("https://raw.githubusercontent.com/aviation4/planets/main/data.json")
+  fetch("https://raw.githubusercontent.com/przem-przem/planets/main/data.json")
     .then(response => {
       if (response.ok){
           return response.json();
@@ -129,7 +156,6 @@ function fetchData () {
 
 const toggleSections = (el, i) => {
 
-  actualSectionName = el.innerHTML.toLowerCase();
   fetchData();
 
 }
@@ -171,6 +197,42 @@ const toggleNavigationBar = (el, i) => {
 }
 
 
+const toggleTable = i => {
+
+  switch(i){
+    case 0:
+
+      activeSectionIndex = 0;
+      overviewButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
+      structureButtonTable.style.background = "none";
+      surfaceButtonTable.style.background = "none";
+      actualSectionName = "overview";
+      break;
+
+    case 1:
+
+      console.log("here");
+      activeSectionIndex = 1;
+      overviewButtonTable.style.background = "none";
+      structureButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
+      surfaceButtonTable.style.background = "none";
+      actualSectionName = "structure";
+      break;
+
+    case 2:
+
+      activeSectionIndex = 2;
+      overviewButtonTable.style.background = "none";
+      structureButtonTable.style.background = "none";
+      surfaceButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
+      actualSectionName = "surface";
+      break;
+  }
+
+
+}
+
+
 
 hamburgerButton.addEventListener("click", toggleHamburgerMenu);
 
@@ -188,6 +250,19 @@ sectionsArray.forEach((el, i) => {
 })
 
 
+sectionsTableArray.forEach((el, i) => {
+
+  el.addEventListener("click", function () {
+
+    console.log(i);
+
+    toggleTable(i);
+    toggleSections(el, i);
+
+  })
+})
+
+
 hamburgerPlanetsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
@@ -195,6 +270,19 @@ hamburgerPlanetsArray.forEach((el, i) => {
     toggleHamburgerMenu();
     actualPlanetIndex = i;
 
+    fetchData();
+
+  })
+
+})
+
+
+topNavPlanetsArray.forEach((el, i) => {
+
+  el.addEventListener("click", function () {
+    
+    actualPlanetIndex = i;
+    toggleTable(activeSectionIndex);
     fetchData();
 
   })
