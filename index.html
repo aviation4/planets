@@ -24,7 +24,7 @@
         <i class="fa-solid fa-bars fa-lg hamburger__buttonClass"></i>
       </a>
       <div class="topNav__planetBar">
-        <h3 id="topNavMercury" class="planetBar__header">MERCURY</h3>
+        <h3 id="topNavMercury" class="planetBar__header planetBar__header--enabled">MERCURY</h3>
         <h3 id="topNavVenus" class="planetBar__header">VENUS</h3>
         <h3 id="topNavEarth" class="planetBar__header">EARTH</h3>
         <h3 id="topNavMars" class="planetBar__header">MARS</h3>
@@ -145,45 +145,51 @@
 
   <main id="main">
 
-    <div class="main__iconContainer">
-      <img id="main__iconID" class="main__icon" src="" alt="">
-      <img id="main__icon--surfaceID" class="main__icon--surface" src="" alt="">
-    </div>
+    <div class="main__iconANDplanet">
+
+      <div class="main__iconContainer">
+        <img id="main__iconID" class="main__icon" src="" alt="">
+        <img id="main__icon--surfaceID" class="main__icon--surface" src="" alt="">
+      </div>
 
 
-    <div class="main__planetANDsecondaryNav">
+      <div class="main__planetANDsecondaryNav">
 
-      <div class="main__planet">
+        <div class="main__planet">
 
-        <h2 id="planet__titleID" class="planet__title"></h2>
+          <h2 id="planet__titleID" class="planet__title"></h2>
 
-        <p id="planet__paragraphID" class="planet__paragraph">
-        </p>
+          <p id="planet__paragraphID" class="planet__paragraph">
+          </p>
 
-        <p class="planet__paragraph planet__paragraph--source">Source : <a id="planet__sourceID" href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank"><strong>Wikipedia</strong><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
+          <p class="planet__paragraph planet__paragraph--source">Source : <a id="planet__sourceID" href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank"><strong>Wikipedia</strong><i class="fa-solid fa-square-arrow-up-right"></i></a></p>
+
+        </div>
+
+        <div class="main__secondaryNav table__body table__body--secondaryNav">
+
+
+            <div id="overviewButton--table" class="table__row table__row--secondaryNav table__row--enabled">
+              <h3 class="table__no">01</h3>
+              <h3 class="table__sectionNames">OVERVIEW</h3>
+            </div>
+            <div id="structureButton--table" class="table__row table__row--secondaryNav">
+              <h3 class="table__no">02</h3>
+              <h3 class="table__sectionNames">INTERNAL STRUCTURE</h3>
+            </div>
+            <div id="surfaceButton--table" class="table__row table__row--secondaryNav">
+              <h3 class="table__no">03</h3>
+              <h3 class="table__sectionNames">SURFACE GEOLOGY</h3>
+            </div>
+
+
+        </div>
 
       </div>
 
-      <div class="main__secondaryNav table__body table__body--secondaryNav">
-
-
-          <div id="overviewButton--table" class="table__row table__row--secondaryNav table__row--enabled">
-            <h3 class="table__no">01</h3>
-            <h3 class="table__sectionNames">OVERVIEW</h3>
-          </div>
-          <div id="structureButton--table" class="table__row table__row--secondaryNav">
-            <h3 class="table__no">02</h3>
-            <h3 class="table__sectionNames">INTERNAL STRUCTURE</h3>
-          </div>
-          <div id="surfaceButton--table" class="table__row table__row--secondaryNav">
-            <h3 class="table__no">03</h3>
-            <h3 class="table__sectionNames">SURFACE GEOLOGY</h3>
-          </div>
-
-
-      </div>
 
     </div>
+
 
 
 

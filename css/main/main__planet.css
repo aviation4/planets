@@ -14,12 +14,25 @@
   }
 }
 
+@media (min-width: 1440px){
+  .planet__title {
+    font-size: 80px;
+  }
+}
+
 .planet__paragraph {
   font-family: "Spartan", "sans-serif";
   font-weight: normal;
   font-size: 11px;
   line-height: 2em;
+  opacity: 0.9;
   margin-bottom: 32px;
+}
+
+@media (min-width: 1440px){
+  .planet__paragraph {
+    font-size: 14px;
+  }
 }
 
 .planet__paragraph strong {
@@ -33,7 +46,6 @@
 
 
 .planet__paragraph--source {
-  font-size: 12px;
   opacity: 0.5;
   margin-bottom: 0;
 }

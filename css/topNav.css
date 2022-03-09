@@ -11,6 +11,13 @@
   }
 }
 
+@media (min-width: 1440px){
+  .topNav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 
 .topNav__title {
   font-family: "Antonio", "sans-serif";
@@ -24,6 +31,12 @@
 @media (min-width: 768px){
   .topNav__title{
     margin: 12px auto 28px auto;
+  }
+}
+
+@media (min-width: 1440px){
+  .topNav__title{
+    flex-basis: 50%;
   }
 }
 
@@ -53,6 +66,15 @@
   .topNav__planetBar {
     display: flex;
     width: 100%;
+    margin: 10px auto;
+    justify-content: space-evenly;
+  }
+}
+
+@media (min-width: 1440px){
+  .topNav__planetBar {
+    display: flex;
+    flex-basis: 50%;
     margin: 10px auto;
     justify-content: space-evenly;
   }

@@ -4,6 +4,7 @@ const main = document.getElementById("main");
 const secondaryNav = document.getElementById("secondaryNav");
 
 let actualPlanetIndex = 0;
+let actualSectionIndex = 0;
 let actualSectionName = "overview";
 
 const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
@@ -24,6 +25,7 @@ const structureButton = document.getElementById("structureButton");
 const surfaceButton = document.getElementById("surfaceButton");
 const sectionsArray = [overviewButton, structureButton, surfaceButton];
 const activeSectionClass = "secondaryNav__header--enabled";
+const activePlanetClass = "planetBar__header--enabled";
 const sectionClass = document.querySelectorAll(".secondaryNav__header");
 
 const topNavMercury = document.getElementById("topNavMercury");
@@ -171,7 +173,7 @@ const toggleNavigationBar = (el, i) => {
   switch(i){
     case 0:
 
-      activeSectionIndex = 0;
+      actualSectionIndex = 0;
       overviewButton.classList.add(activeSectionClass);
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.remove(activeSectionClass);
@@ -179,7 +181,7 @@ const toggleNavigationBar = (el, i) => {
 
     case 1:
 
-      activeSectionIndex = 1;
+      actualSectionIndex = 1;
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.add(activeSectionClass);
       surfaceButton.classList.remove(activeSectionClass);
@@ -187,7 +189,7 @@ const toggleNavigationBar = (el, i) => {
 
     case 2:
 
-      activeSectionIndex = 2;
+      actualSectionIndex = 2;
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.add(activeSectionClass);
@@ -202,7 +204,7 @@ const toggleTable = i => {
   switch(i){
     case 0:
 
-      activeSectionIndex = 0;
+      actualSectionIndex = 0;
       overviewButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
       structureButtonTable.style.background = "none";
       surfaceButtonTable.style.background = "none";
@@ -212,7 +214,7 @@ const toggleTable = i => {
     case 1:
 
       console.log("here");
-      activeSectionIndex = 1;
+      actualSectionIndex = 1;
       overviewButtonTable.style.background = "none";
       structureButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
       surfaceButtonTable.style.background = "none";
@@ -221,7 +223,7 @@ const toggleTable = i => {
 
     case 2:
 
-      activeSectionIndex = 2;
+      actualSectionIndex = 2;
       overviewButtonTable.style.background = "none";
       structureButtonTable.style.background = "none";
       surfaceButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
@@ -280,9 +282,9 @@ hamburgerPlanetsArray.forEach((el, i) => {
 topNavPlanetsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
-    
+
     actualPlanetIndex = i;
-    toggleTable(activeSectionIndex);
+    toggleTable(actualSectionIndex);
     fetchData();
 
   })

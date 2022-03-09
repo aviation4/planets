@@ -12,3 +12,11 @@
   transition: all 200ms;
   cursor: pointer;
 }
+
+@media (min-width: 1440px) {
+
+  .planetBar__header--enabled {
+    border-top: 4px solid #419EBB;
+  }
+
+}
