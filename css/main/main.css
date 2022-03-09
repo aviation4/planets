@@ -41,6 +41,24 @@ main {
 .main__icon {
   height: 150px;
   margin: 100px auto;
+  animation-name: rotatePlanet;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 10s;
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.main__icon:hover {
+  animation-play-state: paused;
 }
 
 @media (min-width: 768px){

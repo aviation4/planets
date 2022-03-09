@@ -68,7 +68,7 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin: 16px 0;
   padding: 18px 24px;
-
+  background: none;
 }
 
 @media (min-width: 768px){
@@ -79,7 +79,7 @@
 
 
 .table__row--secondaryNav:hover {
-  background-color: rgba(216, 216, 216, 0.2);
+  background-color: rgba(216, 216, 216, 0.2) !important;
   cursor: pointer;
   transition: all 200ms;
 }

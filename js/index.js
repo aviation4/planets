@@ -113,8 +113,7 @@ const renderFullData = (jsonResponse) => {
     el.style.borderColor = colorNavArray[actualPlanetIndex];
   })
 
-  console.log(actualPlanetIndex);
-  console.log(actualSectionName);
+
   planet__titleID.innerHTML = jsonResponse[actualPlanetIndex].name;
   planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][actualSectionName].content;
   planet__sourceID.href = jsonResponse[actualPlanetIndex][actualSectionName].source;
@@ -170,6 +169,7 @@ const toggleNavigationBar = (el, i) => {
     el.style.borderColor = colorNavArray[actualPlanetIndex];
   });
 
+
   switch(i){
     case 0:
 
@@ -204,7 +204,7 @@ const toggleTopNavMenu = (el, i) => {
 
   topNavPlanetsArray[actualPlanetIndex].classList.remove(activePlanetClass);
   actualPlanetIndex = i;
-  topNavPlanetsArray[actualPlanetIndex].style.borderColor = colorNavArray[actualPlanetIndex];
+  topNavPlanetsArray[actualPlanetIndex].style.borderColor = colorPlanetsArray[actualPlanetIndex];
   topNavPlanetsArray[actualPlanetIndex].classList.add(activePlanetClass);
 
 }
@@ -212,32 +212,37 @@ const toggleTopNavMenu = (el, i) => {
 
 const toggleTable = i => {
 
+  sectionsTableArray[actualSectionIndex].style.backgroundColor = "transparent";
+  sectionsTableArray[actualSectionIndex].classList.remove(activeSectionTableClassName);
+  actualSectionIndex = i;
+  sectionsTableArray[actualSectionIndex].style.backgroundColor = colorNavArray[actualPlanetIndex];
+
+
   switch(i){
     case 0:
 
-      actualSectionIndex = 0;
+  /*    actualSectionIndex = 0;
       overviewButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
       structureButtonTable.style.background = "none";
-      surfaceButtonTable.style.background = "none";
+      surfaceButtonTable.style.background = "none";*/
       actualSectionName = "overview";
       break;
 
     case 1:
 
-      console.log("here");
-      actualSectionIndex = 1;
+    /*  actualSectionIndex = 1;
       overviewButtonTable.style.background = "none";
       structureButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
-      surfaceButtonTable.style.background = "none";
+      surfaceButtonTable.style.background = "none";*/
       actualSectionName = "structure";
       break;
 
     case 2:
 
-      actualSectionIndex = 2;
+  /*    actualSectionIndex = 2;
       overviewButtonTable.style.background = "none";
       structureButtonTable.style.background = "none";
-      surfaceButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
+      surfaceButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];*/
       actualSectionName = "surface";
       break;
   }
