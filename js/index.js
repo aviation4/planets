@@ -174,6 +174,7 @@ const toggleNavigationBar = (el, i) => {
     case 0:
 
       actualSectionIndex = 0;
+      actualSectionName = "overview";
       overviewButton.classList.add(activeSectionClass);
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.remove(activeSectionClass);
@@ -182,6 +183,7 @@ const toggleNavigationBar = (el, i) => {
     case 1:
 
       actualSectionIndex = 1;
+      actualSectionName = "structure";
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.add(activeSectionClass);
       surfaceButton.classList.remove(activeSectionClass);
@@ -190,6 +192,7 @@ const toggleNavigationBar = (el, i) => {
     case 2:
 
       actualSectionIndex = 2;
+      actualSectionName = "surface";
       overviewButton.classList.remove(activeSectionClass);
       structureButton.classList.remove(activeSectionClass);
       surfaceButton.classList.add(activeSectionClass);
