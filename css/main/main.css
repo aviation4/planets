@@ -44,7 +44,7 @@ main {
   animation-name: rotatePlanet;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-  animation-duration: 10s;
+  animation-duration: 20s;
 }
 
 @keyframes rotatePlanet {
