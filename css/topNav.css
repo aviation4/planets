@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 16px 24px;
+  margin: 16px 24px 0 24px;
 }
 
 @media (min-width: 768px){
@@ -15,6 +15,8 @@
   .topNav {
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 }
 
@@ -37,6 +39,7 @@
 @media (min-width: 1440px){
   .topNav__title{
     flex-basis: 50%;
+    margin: 24px 0;
   }
 }
 
@@ -66,7 +69,7 @@
   .topNav__planetBar {
     display: flex;
     width: 100%;
-    margin: 10px auto;
+    margin-top: 10px;
     justify-content: space-evenly;
   }
 }
@@ -75,7 +78,8 @@
   .topNav__planetBar {
     display: flex;
     flex-basis: 50%;
-    margin: 10px auto;
     justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
   }
 }

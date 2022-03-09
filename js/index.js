@@ -89,18 +89,18 @@ const renderFullData = (jsonResponse) => {
 
   if (actualSectionName == "overview"){
 
-    main__iconID.src= jsonResponse[actualPlanetIndex].images.planet;
-    main__iconSurfaceID.src= "";
+    main__iconID.src = jsonResponse[actualPlanetIndex].images.planet;
+    main__iconSurfaceID.src = "";
 
   } else if (actualSectionName == "structure"){
 
-    main__iconID.src= jsonResponse[actualPlanetIndex].images.internal;
-    main__iconSurfaceID.src= "";
+    main__iconID.src = jsonResponse[actualPlanetIndex].images.internal;
+    main__iconSurfaceID.src = "";
 
   } else if (actualSectionName == "surface"){
 
-    main__iconID.src= jsonResponse[actualPlanetIndex].images.planet;
-    main__iconSurfaceID.src= jsonResponse[actualPlanetIndex].images.geology;
+    main__iconID.src = jsonResponse[actualPlanetIndex].images.planet;
+    main__iconSurfaceID.src = jsonResponse[actualPlanetIndex].images.geology;
 
   }
 
@@ -199,6 +199,17 @@ const toggleNavigationBar = (el, i) => {
 }
 
 
+
+const toggleTopNavMenu = (el, i) => {
+
+  topNavPlanetsArray[actualPlanetIndex].classList.remove(activePlanetClass);
+  actualPlanetIndex = i;
+  topNavPlanetsArray[actualPlanetIndex].style.borderColor = colorNavArray[actualPlanetIndex];
+  topNavPlanetsArray[actualPlanetIndex].classList.add(activePlanetClass);
+
+}
+
+
 const toggleTable = i => {
 
   switch(i){
@@ -256,8 +267,6 @@ sectionsTableArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    console.log(i);
-
     toggleTable(i);
     toggleSections(el, i);
 
@@ -283,7 +292,7 @@ topNavPlanetsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    actualPlanetIndex = i;
+    toggleTopNavMenu(el, i);
     toggleTable(actualSectionIndex);
     fetchData();
 
