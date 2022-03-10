@@ -1,5 +1,5 @@
-const hamburgerButton = document.getElementById("hamburger__button");
-const hamburgerMenu = document.getElementById("hamburger__menu");
+const hamburgerButton = document.getElementById("hamburgerButton");
+const hamburgerMenu = document.getElementById("hamburgerMenu");
 const main = document.getElementById("main");
 const secondaryNav = document.getElementById("secondaryNav");
 
@@ -10,33 +10,19 @@ let actualSectionName = "overview";
 const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
 const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
 
-const hamburgerMercury = document.getElementById("hamburgerMercury");
-const hamburgerVenus = document.getElementById("hamburgerVenus");
-const hamburgerEarth = document.getElementById("hamburgerEarth");
-const hamburgerMars = document.getElementById("hamburgerMars");
-const hamburgerJupiter = document.getElementById("hamburgerJupiter");
-const hamburgerSaturn = document.getElementById("hamburgerSaturn");
-const hamburgerUranus = document.getElementById("hamburgerUranus");
-const hamburgerNeptune = document.getElementById("hamburgerNeptune");
-const hamburgerPlanetsArray = [hamburgerMercury, hamburgerVenus, hamburgerEarth, hamburgerMars, hamburgerJupiter, hamburgerSaturn, hamburgerUranus, hamburgerNeptune];
+const hamburgerPlanetsArray = Array.from(document.querySelectorAll(".hamburger__planet"));
 
-const overviewButton = document.getElementById("overviewButton");
-const structureButton = document.getElementById("structureButton");
-const surfaceButton = document.getElementById("surfaceButton");
-const sectionsArray = [overviewButton, structureButton, surfaceButton];
+
+
+
+const sectionsArray = Array.from(document.querySelectorAll(".secondaryNav__header"));
+
 const activeSectionClass = "secondaryNav__header--enabled";
-const activePlanetClass = "planetBar__header--enabled";
+const activePlanetClass = "planetBar__planetName--enabled";
 const sectionClass = document.querySelectorAll(".secondaryNav__header");
 
-const topNavMercury = document.getElementById("topNavMercury");
-const topNavVenus = document.getElementById("topNavVenus");
-const topNavEarth = document.getElementById("topNavEarth");
-const topNavMars = document.getElementById("topNavMars");
-const topNavJupiter = document.getElementById("topNavJupiter");
-const topNavSaturn = document.getElementById("topNavSaturn");
-const topNavUranus = document.getElementById("topNavUranus");
-const topNavNeptune = document.getElementById("topNavNeptune");
-const topNavPlanetsArray = [topNavMercury, topNavVenus, topNavEarth, topNavMars, topNavJupiter, topNavSaturn, topNavUranus, topNavNeptune];
+
+const topNavPlanetsArray = Array.from(document.querySelectorAll(".planetBar__planetName"));
 
 const overviewButtonTable = document.getElementById("overviewButton--table");
 const structureButtonTable = document.getElementById("structureButton--table");

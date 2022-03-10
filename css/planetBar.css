@@ -1,4 +1,4 @@
-.planetBar__header {
+.planetBar__planetName {
   font-size: 11px;
   font-family: Spartan, "sans-serif";
   font-weight: bold;
@@ -8,14 +8,14 @@
   transition: all 200ms;
 }
 
-.planetBar__header:hover {
+.planetBar__planetName:hover {
   opacity: 1;
   transition: all 200ms;
   cursor: pointer;
 }
 
 @media (min-width: 768px) {
-  .planetBar__header--enabled {
+  .planetBar__planetName--enabled {
     border-bottom: 4px solid #419EBB;
     opacity: 1;
   }
@@ -23,11 +23,11 @@
 
 @media (min-width: 1440px) {
 
-  .planetBar__header {
+  .planetBar__planetName {
     padding: 30px 0;
   }
 
-  .planetBar__header--enabled {
+  .planetBar__planetName--enabled {
     border-bottom: 0;
     border-top: 4px solid #419EBB;
     opacity: 1;

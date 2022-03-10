@@ -1,27 +1,27 @@
-.hamburger {
+.nav__hamburger {
   display: none;
 }
 
 
-.hamburger hr {
+.nav__hamburger hr {
   margin-left: 20px;
   margin-right: 20px;
   opacity: 0.1;
 }
 
 
-.hamburger__buttonClass {
+.hamburger__favicon {
   color: white;
   transform: scaleX(1.2);
 }
 
-.hamburger__buttonClass:hover {
+.hamburger__favicon:hover {
   opacity: 0.7;
   transition: 200ms;
 }
 
 
-.hamburger__buttonClass--enabled {
+.hamburger__favicon--enabled {
   opacity: 0.25;
 }
 

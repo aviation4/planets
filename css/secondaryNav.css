@@ -1,4 +1,4 @@
-.secondaryNav {
+.nav__secondaryNav {
     display: flex;
     justify-content: space-around;
     margin: 17px 0;
@@ -6,7 +6,7 @@
 
 @media (min-width: 768px){
 
-  .secondaryNav {
+  .nav__secondaryNav {
     display: none;
   }
 

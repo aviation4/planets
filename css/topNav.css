@@ -1,4 +1,4 @@
-.topNav {
+.nav__topNav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,14 +6,14 @@
 }
 
 @media (min-width: 768px){
-  .topNav {
+  .nav__topNav {
     flex-direction: column;
     margin-bottom: 0;
   }
 }
 
 @media (min-width: 1440px){
-  .topNav {
+  .nav__topNav {
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0;
