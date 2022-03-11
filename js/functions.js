@@ -3,8 +3,6 @@ import {
   hamburgerMenu,
   main,
   secondaryNav,
-  ACTUAL_PLANET_INDEX,
-  ACTUAL_SECTION_INDEX,
   colorPlanetsArray,
   colorNavArray,
   hamburgerPlanetsArray,
