@@ -1,0 +1,25 @@
+{
+  "name": "planets",
+  "version": "1.0.0",
+  "description": "- [Summary](#summary)\r - [Usage](#usage)\r - [Built with](#built-with)\r - [Live website](#live-website)",
+  "source": "src/index.html",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://przem-przem.github.io/planets/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "email": "przemek.kaminski4@gmail.com"
+  },
+  "homepage": "https://github.com/przem-przem/planets#readme",
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  }
+}
