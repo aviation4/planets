@@ -63,4 +63,4 @@ For mobile devices, in order to change the planet, the user has to open the hamb
 
 ## Live website
 
-[Here you can test live website](https://przem-przem.github.io/planet/)
+[Here you can test live website](https://przem-przem.github.io/planets/)
