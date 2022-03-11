@@ -1,0 +1,73 @@
+.main__icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 1440px){
+  .main__icon {
+    flex-basis: 100%;
+  }
+}
+
+
+
+.icon__icon {
+  height: 150px;
+  margin: 100px auto;
+  animation-name: rotatePlanet;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 20s;
+}
+
+@keyframes rotatePlanet {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+.icon__icon:hover {
+  animation-play-state: paused;
+}
+
+@media (min-width: 768px){
+  .icon__icon {
+    height: 250px;
+    margin: 180px auto;
+  }
+}
+
+@media (min-width: 1440px){
+  .icon__icon {
+    height: 280px;
+  }
+}
+
+
+
+.icon__icon--surface {
+  position: absolute;
+  height: 130px;
+  bottom: 0;
+}
+
+@media (min-width: 768px){
+  .icon__icon--surface {
+    bottom: 100px;
+    height: 170px;
+  }
+}
+
+@media (min-width: 1440px){
+  .icon__icon--surface {
+    height: 200px;
+    bottom: 160px;
+  }
+}

@@ -3,8 +3,13 @@ const hamburgerMenu = document.getElementById("hamburgerMenu");
 const main = document.getElementById("main");
 const secondaryNav = document.getElementById("secondaryNav");
 
+/* Default displayed planet is Mercury */
 let actualPlanetIndex = 0;
+
+/* Defualt displayed section is Overview */
 let actualSectionIndex = 0;
+
+
 
 /* For planet bar */
 const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
@@ -13,25 +18,27 @@ const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A"
 const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
 
 
+
+/* Habmurger menu buttons for screen widths < 768px */
 const hamburgerPlanetsArray = Array.from(document.querySelectorAll(".hamburger__planet"));
 
-/* For screen widths < 768px */
-const sectionsArray = Array.from(document.querySelectorAll(".secondaryNav__header"));
+/* Section buttons for screen widths < 768px */
+const sectionsArray = Array.from(document.querySelectorAll(".navSecondaryNav__header"));
 
 
-const activeSectionClass = "secondaryNav__header--enabled";
+const activeSectionClass = "navSecondaryNav__header--enabled";
 const activePlanetClass = "planetBar__planetName--enabled";
-const topNavPlanetsArray = Array.from(document.querySelectorAll(".planetBar__planetName"));
+const planetsNavbarArray = Array.from(document.querySelectorAll(".planetBar__planetName"));
 
-const sectionsTableArray = Array.from(document.querySelectorAll(".table__row--secondaryNav"));
+const sectionsTableArray = Array.from(document.querySelectorAll(".mainSecondaryNav__button"));
 
-const activeSectionTableClassName = "table__row--enabled";
+const activeSectionTableClassName = "mainSecondaryNav__button--enabled";
 
-const main__iconID = document.getElementById("main__iconID");
-const main__iconSurfaceID = document.getElementById("main__icon--surfaceID");
-const planet__titleID = document.getElementById("planet__titleID");
-const planet__paragraphID = document.getElementById("planet__paragraphID");
-const planet__sourceID = document.getElementById("planet__sourceID");
+const main__iconID = document.getElementById("iconID");
+const main__iconSurfaceID = document.getElementById("iconSurfaceID");
+const planet__titleID = document.getElementById("planetTitleID");
+const planet__paragraphID = document.getElementById("planetParagraphID");
+const planet__sourceID = document.getElementById("planetSourceID");
 
 const rotationTime = document.getElementById("rotationTime");
 const revolutionTime = document.getElementById("revolutionTime");
@@ -43,6 +50,10 @@ const averageTemp = document.getElementById("averageTemp");
 
 
 const renderFullData = (jsonResponse) => {
+
+  sectionsArray.forEach(el => {
+    el.style.borderColor = colorNavArray[actualPlanetIndex];
+  })
 
   let actualSectionName;
 
@@ -103,7 +114,7 @@ function fetchData () {
 
 
 
-const toggleHamburgerMenu = () => {
+const toggleHamburgerMenu = i => {
 
   if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
     hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
@@ -123,9 +134,11 @@ const toggleHamburgerMenu = () => {
 }
 
 
-const toggleNavigationBar = (el, i) => {
 
+/*** For screen widths < 768px **/
+const toggleSectionsNavigationBar = (el, i) => {
 
+  /* Assign actual planet color to border */
   sectionsArray.forEach(el => {
     el.style.borderColor = colorNavArray[actualPlanetIndex];
   });
@@ -138,17 +151,20 @@ const toggleNavigationBar = (el, i) => {
 
 
 
-const toggleTopNavMenu = (el, i) => {
+/*** For screen widths >= 768px ***/
+const togglePlanetsNavbar = (el, i) => {
 
-  topNavPlanetsArray[actualPlanetIndex].classList.remove(activePlanetClass);
+  planetsNavbarArray[actualPlanetIndex].classList.remove(activePlanetClass);
   actualPlanetIndex = i;
-  topNavPlanetsArray[actualPlanetIndex].style.borderColor = colorPlanetsArray[actualPlanetIndex];
-  topNavPlanetsArray[actualPlanetIndex].classList.add(activePlanetClass);
+  planetsNavbarArray[actualPlanetIndex].style.borderColor = colorPlanetsArray[actualPlanetIndex];
+  planetsNavbarArray[actualPlanetIndex].classList.add(activePlanetClass);
 
 }
 
 
-const toggleTable = i => {
+
+/*** For screen widths >= 768px ***/
+const toggleSectionsMain = i => {
 
   sectionsTableArray[actualSectionIndex].style.backgroundColor = "transparent";
   sectionsTableArray[actualSectionIndex].classList.remove(activeSectionTableClassName);
@@ -159,17 +175,18 @@ const toggleTable = i => {
 }
 
 
-/* For screen widths < 768px */
+
+/** For screen widths < 768px ***/
 hamburgerButton.addEventListener("click", toggleHamburgerMenu);
 
 
 
-/* For screen widths < 768px */
+/*** For screen widths < 768px ***/
 sectionsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    toggleNavigationBar(el, i);
+    toggleSectionsNavigationBar(el, i);
     fetchData();
 
   });
@@ -177,24 +194,25 @@ sectionsArray.forEach((el, i) => {
 })
 
 
-/* For screen widths >= 768px */
+/*** For screen widths >= 768px ***/
 sectionsTableArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    toggleTable(i);
+    toggleSectionsMain(i);
     fetchData();
 
   })
 })
 
 
-/* For screen widths < 768px */
+
+/*** For screen widths < 768px ***/
 hamburgerPlanetsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    toggleHamburgerMenu();
+    toggleHamburgerMenu(i);
     fetchData();
 
   })
@@ -202,13 +220,14 @@ hamburgerPlanetsArray.forEach((el, i) => {
 })
 
 
-/* For screen widths >= 768px */
-topNavPlanetsArray.forEach((el, i) => {
+
+/*** For screen widths >= 768px */
+planetsNavbarArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    toggleTopNavMenu(el, i);
-    toggleTable(actualSectionIndex);
+    togglePlanetsNavbar(el, i);
+    toggleSectionsMain(actualSectionIndex);
     fetchData();
 
   })

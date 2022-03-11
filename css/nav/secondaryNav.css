@@ -5,15 +5,13 @@
 }
 
 @media (min-width: 768px){
-
   .nav__secondaryNav {
     display: none;
   }
-
 }
 
 
-.secondaryNav__header {
+.navSecondaryNav__header {
   padding: 20px 5px;
   color: white;
   text-decoration: none;
@@ -26,13 +24,13 @@
   letter-spacing: 2.6px;
 }
 
-.secondaryNav__header:hover {
+.navSecondaryNav__header:hover {
   transition: 200ms all;
   opacity: 1;
   border-bottom: 4px solid #419EBB;
 }
 
-.secondaryNav__header--enabled {
+.navSecondaryNav__header--enabled {
   opacity: 1;
   transition: 200ms all;
   border-bottom: 4px solid #419EBB;
