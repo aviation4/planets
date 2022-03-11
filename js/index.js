@@ -5,7 +5,7 @@ const secondaryNav = document.getElementById("secondaryNav");
 
 let actualPlanetIndex = 0;
 let actualSectionIndex = 0;
-let actualSectionName = "overview";
+
 
 const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
 const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
@@ -19,7 +19,7 @@ const sectionsArray = Array.from(document.querySelectorAll(".secondaryNav__heade
 
 const activeSectionClass = "secondaryNav__header--enabled";
 const activePlanetClass = "planetBar__planetName--enabled";
-const sectionClass = document.querySelectorAll(".secondaryNav__header");
+const sectionClass = Array.from(document.querySelectorAll(".secondaryNav__header"));
 
 
 const topNavPlanetsArray = Array.from(document.querySelectorAll(".planetBar__planetName"));
@@ -45,53 +45,29 @@ const averageTemp = document.getElementById("averageTemp");
 
 
 
-const toggleHamburgerMenu = () => {
-
-  if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
-    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
-    hamburgerMenu.style.display = "none";
-    main.style.display = "block";
-    secondaryNav.style.display = "flex";
-
-  } else {
-    hamburgerButton.classList.add("hamburger__buttonClass--enabled");
-    hamburgerMenu.style.display = "block";
-    main.style.display = "none";
-    secondaryNav.style.display = "none";
-  }
-
-}
-
 
 const renderFullData = (jsonResponse) => {
 
-  /* Unifing section names */
-  if (actualSectionName == "internal structure"){
-    actualSectionName = "structure";
-  } else if (actualSectionName == "surface geology"){
-    actualSectionName = "surface";
-  }
+  let actualSectionName;
 
+  if (actualSectionIndex == 0){
 
-  if (actualSectionName == "overview"){
-
+    actualSectionName = "overview";
     main__iconID.src = jsonResponse[actualPlanetIndex].images.planet;
     main__iconSurfaceID.src = "";
 
-  } else if (actualSectionName == "structure"){
+  } else if (actualSectionIndex == 1){
 
+    actualSectionName = "structure";
     main__iconID.src = jsonResponse[actualPlanetIndex].images.internal;
     main__iconSurfaceID.src = "";
 
-  } else if (actualSectionName == "surface"){
+  } else if (actualSectionIndex == 2){
 
+    actualSectionName = "geology";
     main__iconID.src = jsonResponse[actualPlanetIndex].images.planet;
     main__iconSurfaceID.src = jsonResponse[actualPlanetIndex].images.geology;
 
-  }
-
-  if (actualSectionName == "surface"){
-    actualSectionName = "geology";
   }
 
 
@@ -110,9 +86,6 @@ const renderFullData = (jsonResponse) => {
   averageTemp.innerHTML = jsonResponse[actualPlanetIndex].temperature;
 
 
-  if (actualSectionName == "geology"){
-    actualSectionName = "surface";
-  }
 
 }
 
@@ -148,6 +121,25 @@ const toggleSections = (el, i) => {
 }
 
 
+
+const toggleHamburgerMenu = () => {
+
+  if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
+    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
+    hamburgerMenu.style.display = "none";
+    main.style.display = "block";
+    secondaryNav.style.display = "flex";
+
+  } else {
+    hamburgerButton.classList.add("hamburger__buttonClass--enabled");
+    hamburgerMenu.style.display = "block";
+    main.style.display = "none";
+    secondaryNav.style.display = "none";
+  }
+
+}
+
+
 const toggleNavigationBar = (el, i) => {
 
 
@@ -155,35 +147,9 @@ const toggleNavigationBar = (el, i) => {
     el.style.borderColor = colorNavArray[actualPlanetIndex];
   });
 
-
-  switch(i){
-    case 0:
-
-      actualSectionIndex = 0;
-      actualSectionName = "overview";
-      overviewButton.classList.add(activeSectionClass);
-      structureButton.classList.remove(activeSectionClass);
-      surfaceButton.classList.remove(activeSectionClass);
-      break;
-
-    case 1:
-
-      actualSectionIndex = 1;
-      actualSectionName = "structure";
-      overviewButton.classList.remove(activeSectionClass);
-      structureButton.classList.add(activeSectionClass);
-      surfaceButton.classList.remove(activeSectionClass);
-      break;
-
-    case 2:
-
-      actualSectionIndex = 2;
-      actualSectionName = "surface";
-      overviewButton.classList.remove(activeSectionClass);
-      structureButton.classList.remove(activeSectionClass);
-      surfaceButton.classList.add(activeSectionClass);
-      break;
-  }
+  sectionClass[actualSectionIndex].classList.remove(activeSectionClass);
+  actualSectionIndex = i;
+  sectionClass[actualSectionIndex].classList.add(activeSectionClass);
 
 }
 
@@ -205,36 +171,6 @@ const toggleTable = i => {
   sectionsTableArray[actualSectionIndex].classList.remove(activeSectionTableClassName);
   actualSectionIndex = i;
   sectionsTableArray[actualSectionIndex].style.backgroundColor = colorNavArray[actualPlanetIndex];
-
-
-  switch(i){
-    case 0:
-
-  /*    actualSectionIndex = 0;
-      overviewButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
-      structureButtonTable.style.background = "none";
-      surfaceButtonTable.style.background = "none";*/
-      actualSectionName = "overview";
-      break;
-
-    case 1:
-
-    /*  actualSectionIndex = 1;
-      overviewButtonTable.style.background = "none";
-      structureButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];
-      surfaceButtonTable.style.background = "none";*/
-      actualSectionName = "structure";
-      break;
-
-    case 2:
-
-  /*    actualSectionIndex = 2;
-      overviewButtonTable.style.background = "none";
-      structureButtonTable.style.background = "none";
-      surfaceButtonTable.style.backgroundColor = colorNavArray[actualPlanetIndex];*/
-      actualSectionName = "surface";
-      break;
-  }
 
 
 }
