@@ -26,6 +26,14 @@ import {
 
 
 
+/* Default displayed planet is Mercury */
+let ACTUAL_PLANET_INDEX = 0;
+
+/* Defualt displayed section is Overview */
+let ACTUAL_SECTION_INDEX = 0;
+
+
+
 export const renderFullData = (jsonResponse) => {
 
   sectionsArray.forEach(el => {
@@ -132,6 +140,11 @@ export const togglePlanetsNavbar = (el, i) => {
   ACTUAL_PLANET_INDEX = i;
   planetsNavbarArray[ACTUAL_PLANET_INDEX].style.borderColor = colorPlanetsArray[ACTUAL_PLANET_INDEX];
   planetsNavbarArray[ACTUAL_PLANET_INDEX].classList.add(activePlanetClass);
+
+  sectionMainArray.forEach(el => {
+    el.style.backgroundColor = "transparent";
+  })
+  sectionMainArray[ACTUAL_SECTION_INDEX].style.backgroundColor = colorNavArray[ACTUAL_PLANET_INDEX];
 
 }
 

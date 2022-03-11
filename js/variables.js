@@ -4,14 +4,6 @@ export const main = document.getElementById("main");
 export const secondaryNav = document.getElementById("secondaryNav");
 
 
-/* Default displayed planet is Mercury */
-export let ACTUAL_PLANET_INDEX = 0;
-
-/* Defualt displayed section is Overview */
-export let ACTUAL_SECTION_INDEX = 0;
-
-
-
 /* For planet bar */
 export const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
 
