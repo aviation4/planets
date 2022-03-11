@@ -6,28 +6,24 @@ const secondaryNav = document.getElementById("secondaryNav");
 let actualPlanetIndex = 0;
 let actualSectionIndex = 0;
 
-
+/* For planet bar */
 const colorPlanetsArray = ["#DEF4FC", "#F7CC7F", "#545BFE", "#FF6A45", "#ECAD7A", "#FCCB6B", "#65F0D5", "#497EFA"];
+
+/* For secondary navigation (sections) */
 const colorNavArray = ["#419EBB", "#EDA249", "#6D2ED5", "#D14C32", "#D83A34", "#CD5120", "#1EC1A2", "#2D68F0"];
+
 
 const hamburgerPlanetsArray = Array.from(document.querySelectorAll(".hamburger__planet"));
 
-
-
-
+/* For screen widths < 768px */
 const sectionsArray = Array.from(document.querySelectorAll(".secondaryNav__header"));
+
 
 const activeSectionClass = "secondaryNav__header--enabled";
 const activePlanetClass = "planetBar__planetName--enabled";
-const sectionClass = Array.from(document.querySelectorAll(".secondaryNav__header"));
-
-
 const topNavPlanetsArray = Array.from(document.querySelectorAll(".planetBar__planetName"));
 
-const overviewButtonTable = document.getElementById("overviewButton--table");
-const structureButtonTable = document.getElementById("structureButton--table");
-const surfaceButtonTable = document.getElementById("surfaceButton--table");
-const sectionsTableArray = [overviewButtonTable, structureButtonTable, surfaceButtonTable];
+const sectionsTableArray = Array.from(document.querySelectorAll(".table__row--secondaryNav"));
 
 const activeSectionTableClassName = "table__row--enabled";
 
@@ -70,12 +66,6 @@ const renderFullData = (jsonResponse) => {
 
   }
 
-
-  sectionClass.forEach(el => {
-    el.style.borderColor = colorNavArray[actualPlanetIndex];
-  })
-
-
   planet__titleID.innerHTML = jsonResponse[actualPlanetIndex].name;
   planet__paragraphID.innerHTML = jsonResponse[actualPlanetIndex][actualSectionName].content;
   planet__sourceID.href = jsonResponse[actualPlanetIndex][actualSectionName].source;
@@ -95,7 +85,6 @@ const renderFullData = (jsonResponse) => {
 
 function fetchData () {
 
-
   fetch("https://raw.githubusercontent.com/przem-przem/planets/main/data.json")
     .then(response => {
       if (response.ok){
@@ -109,14 +98,6 @@ function fetchData () {
       renderFullData(jsonResponse);
 
   })
-
-}
-
-
-
-const toggleSections = (el, i) => {
-
-  fetchData();
 
 }
 
@@ -137,19 +118,21 @@ const toggleHamburgerMenu = () => {
     secondaryNav.style.display = "none";
   }
 
+    actualPlanetIndex = i;
+
 }
 
 
 const toggleNavigationBar = (el, i) => {
 
 
-  sectionClass.forEach(el => {
+  sectionsArray.forEach(el => {
     el.style.borderColor = colorNavArray[actualPlanetIndex];
   });
 
-  sectionClass[actualSectionIndex].classList.remove(activeSectionClass);
+  sectionsArray[actualSectionIndex].classList.remove(activeSectionClass);
   actualSectionIndex = i;
-  sectionClass[actualSectionIndex].classList.add(activeSectionClass);
+  sectionsArray[actualSectionIndex].classList.add(activeSectionClass);
 
 }
 
@@ -176,41 +159,42 @@ const toggleTable = i => {
 }
 
 
-
+/* For screen widths < 768px */
 hamburgerButton.addEventListener("click", toggleHamburgerMenu);
 
 
 
+/* For screen widths < 768px */
 sectionsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
     toggleNavigationBar(el, i);
-    toggleSections(el, i);
+    fetchData();
 
   });
 
 })
 
 
+/* For screen widths >= 768px */
 sectionsTableArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
     toggleTable(i);
-    toggleSections(el, i);
+    fetchData();
 
   })
 })
 
 
+/* For screen widths < 768px */
 hamburgerPlanetsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
     toggleHamburgerMenu();
-    actualPlanetIndex = i;
-
     fetchData();
 
   })
@@ -218,6 +202,7 @@ hamburgerPlanetsArray.forEach((el, i) => {
 })
 
 
+/* For screen widths >= 768px */
 topNavPlanetsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
@@ -231,4 +216,5 @@ topNavPlanetsArray.forEach((el, i) => {
 })
 
 
+/* Initial fetching */
 fetchData();
