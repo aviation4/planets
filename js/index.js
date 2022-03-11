@@ -1,5 +1,5 @@
 import {
-  ACTUAL_SECTION_INDEX,
+//  ACTUAL_SECTION_INDEX,
   hamburgerButton,
   sectionsArray,
   sectionMainArray,
@@ -71,7 +71,7 @@ planetsNavbarArray.forEach((el, i) => {
   el.addEventListener("click", function () {
 
     togglePlanetsNavbar(el, i);
-    toggleSectionsMain(ACTUAL_SECTION_INDEX);
+//    toggleSectionsMain(ACTUAL_SECTION_INDEX);
     fetchData();
 
   })
