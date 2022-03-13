@@ -4,7 +4,8 @@ import {
   sectionsArray,
   sectionMainArray,
   hamburgerPlanetsArray,
-  planetsNavbarArray
+  planetsNavbarArray,
+  ACTUAL_PLANET_INDEX
 } from "./variables.js";
 
 
@@ -12,9 +13,9 @@ import {
   renderFullData,
   fetchData,
   toggleHamburgerMenu,
-  toggleSectionsNavigationBar,
-  togglePlanetsNavbar,
-  toggleSectionsMain
+  updateSectionColor,
+  updateSectionState,
+  updatePlanetColors
 } from "./functions.js";
 
 
@@ -26,11 +27,28 @@ hamburgerButton.addEventListener("click", toggleHamburgerMenu);
 
 
 /*** For screen widths < 768px ***/
+hamburgerPlanetsArray.forEach((el, i) => {
+
+  el.addEventListener("click", function () {
+
+    toggleHamburgerMenu();
+    updatePlanetColors(i);
+    updateSectionColor();
+    fetchData();
+
+  })
+
+})
+
+
+
+/*** For screen widths < 768px ***/
 sectionsArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    toggleSectionsNavigationBar(el, i);
+    updateSectionState(i);
+    updateSectionColor();
     fetchData();
 
   });
@@ -43,25 +61,14 @@ sectionMainArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    toggleSectionsMain(i);
+    updateSectionState(i);
+    updateSectionColor();
     fetchData();
 
   })
 })
 
 
-
-/*** For screen widths < 768px ***/
-hamburgerPlanetsArray.forEach((el, i) => {
-
-  el.addEventListener("click", function () {
-
-    toggleHamburgerMenu(i);
-    fetchData();
-
-  })
-
-})
 
 
 
@@ -70,8 +77,8 @@ planetsNavbarArray.forEach((el, i) => {
 
   el.addEventListener("click", function () {
 
-    togglePlanetsNavbar(el, i);
-//    toggleSectionsMain(ACTUAL_SECTION_INDEX);
+    updatePlanetColors(i);
+    updateSectionColor();
     fetchData();
 
   })

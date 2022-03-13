@@ -94,7 +94,7 @@ export const fetchData = () => {
 
 
 
-export const toggleHamburgerMenu = i => {
+export const toggleHamburgerMenu = () => {
 
   if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
     hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
@@ -109,50 +109,44 @@ export const toggleHamburgerMenu = i => {
     secondaryNav.style.display = "none";
   }
 
-    ACTUAL_PLANET_INDEX = i;
-
 }
 
 
 
-/*** For screen widths < 768px **/
-export const toggleSectionsNavigationBar = (el, i) => {
+export const updatePlanetColors = i => {
 
-  /* Assign actual planet color to border */
-  sectionsArray.forEach(el => {
-    el.style.borderColor = colorNavArray[ACTUAL_PLANET_INDEX];
-  });
+    planetsNavbarArray[ACTUAL_PLANET_INDEX].classList.remove(activePlanetClass);
+    ACTUAL_PLANET_INDEX = i;
+    planetsNavbarArray[ACTUAL_PLANET_INDEX].style.borderColor = colorPlanetsArray[ACTUAL_PLANET_INDEX];
+    planetsNavbarArray[ACTUAL_PLANET_INDEX].classList.add(activePlanetClass);
+
+}
+
+
+export const updateSectionState = i => {
 
   sectionsArray[ACTUAL_SECTION_INDEX].classList.remove(activeSectionNavbarClass);
+  sectionMainArray[ACTUAL_SECTION_INDEX].style.backgroundColor = "transparent";
   ACTUAL_SECTION_INDEX = i;
   sectionsArray[ACTUAL_SECTION_INDEX].classList.add(activeSectionNavbarClass);
-
-}
-
-
-
-/*** For screen widths >= 768px ***/
-export const togglePlanetsNavbar = (el, i) => {
-
-  planetsNavbarArray[ACTUAL_PLANET_INDEX].classList.remove(activePlanetClass);
-  ACTUAL_PLANET_INDEX = i;
-  planetsNavbarArray[ACTUAL_PLANET_INDEX].style.borderColor = colorPlanetsArray[ACTUAL_PLANET_INDEX];
-  planetsNavbarArray[ACTUAL_PLANET_INDEX].classList.add(activePlanetClass);
-
-  sectionMainArray.forEach(el => {
-    el.style.backgroundColor = "transparent";
-  })
   sectionMainArray[ACTUAL_SECTION_INDEX].style.backgroundColor = colorNavArray[ACTUAL_PLANET_INDEX];
 
 }
 
 
 
-/*** For screen widths >= 768px ***/
-export const toggleSectionsMain = i => {
+export const updateSectionColor = () => {
 
-  sectionMainArray[ACTUAL_SECTION_INDEX].style.backgroundColor = "transparent";
-  ACTUAL_SECTION_INDEX = i;
+  /* For screen widths < 768px */
+  sectionsArray.forEach(el => {
+    el.style.borderColor = colorNavArray[ACTUAL_PLANET_INDEX];
+  });
+
+
+  /* For screen widths >= 768px */
+  sectionMainArray.forEach(el => {
+    el.style.backgroundColor = "transparent";
+  })
   sectionMainArray[ACTUAL_SECTION_INDEX].style.backgroundColor = colorNavArray[ACTUAL_PLANET_INDEX];
 
 }
