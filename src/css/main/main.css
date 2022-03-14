@@ -2,33 +2,24 @@ main {
   background-image: url(../../assets/background-stars.svg);
   background-repeat: repeat;
   padding-bottom: 30px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  display: block;
 }
 
-
-
-.main__planetANDsecondaryNav {
-  display: flex;
-}
-
-
-@media (min-width: 1440px){
-
-  .main__planetANDsecondaryNav {
-    flex-direction: column;
-    flex-basis: 60%;
-    margin-right: 165px;
-    margin-top: 115px;
-    margin-bottom: 70px;
+@media (min-width: 768px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 1fr);
   }
-
 }
 
 
-
-@media (min-width: 1440px){
-
-  .main__iconANDplanet {
-    display: flex;
+@media (min-width: 1440px) {
+  main {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(8, 1fr);
   }
-
 }

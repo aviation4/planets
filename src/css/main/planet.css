@@ -3,16 +3,25 @@
   text-align: center;
 }
 
-@media (min-width: 768px){
-
+@media (min-width: 768px) {
   .main__planet {
+    grid-column: 1 / span 6;
+    grid-row: 7 / span 2;
     text-align: left;
     flex-basis: 50%;
     margin: 0 40px;
   }
-
 }
 
+@media (min-width: 1440px) {
+  .main__planet {
+    grid-column: 7 / span 4;
+    grid-row: 2 / span 3;
+    text-align: left;
+    flex-basis: 50%;
+    margin-right: 80px;
+  }
+}
 
 
 .planet__title {

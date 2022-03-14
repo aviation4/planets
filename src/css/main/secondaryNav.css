@@ -1,6 +1,6 @@
 .main__secondaryNav {
   display: none;
-  padding: 0 40px;
+  margin: 0 40px;
   flex-basis: 50%;
   align-items: center;
   letter-spacing: 2px;
@@ -9,13 +9,16 @@
 @media (min-width: 768px){
   .main__secondaryNav {
     display: block;
+    grid-column: 7 / span 4;
+    grid-row: 7 / span 2;
   }
 }
 
 @media (min-width: 1440px){
   .main__secondaryNav {
-    padding: 0 40px;
-    margin-top: 20px;
+    margin-right: 80px;
+    grid-column: 7 / span 4;
+    grid-row: 5 / span 2;
   }
 }
 

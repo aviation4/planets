@@ -4,8 +4,17 @@
   justify-content: center;
 }
 
+@media (min-width: 768px){
+  .main__icon {
+    grid-column: 1 / span 10;
+    grid-row: 1 / span 6;
+  }
+}
+
 @media (min-width: 1440px){
   .main__icon {
+    grid-column: 1 / span 6;
+    grid-row: 2 / span 6;
     flex-basis: 100%;
   }
 }
@@ -67,7 +76,7 @@
 
 @media (min-width: 1440px){
   .icon__icon--surface {
-    height: 200px;
+    height: 300px;
     bottom: 160px;
   }
 }
