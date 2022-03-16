@@ -59,10 +59,14 @@
   transition: transform 330ms ease-out;
 }
 
-.topNav__hamburgerButton:hover {
-  opacity: 0.7;
-  transition: 330ms all;
+@media (hover:hover) {
+  .topNav__hamburgerButton:hover {
+    opacity: 0.7;
+    transition: 330ms all;
+  }
 }
+
+
 
 .topNav__hamburgerButton--isActive {
   transform: rotate(-45deg);
