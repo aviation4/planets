@@ -1,5 +1,6 @@
 import {
   hamburgerButton,
+  hamburgerButtonElements,
   hamburgerMenu,
   main,
   secondaryNav,
@@ -11,6 +12,9 @@ import {
   planetsNavbarArray,
   activeSectionNavbarClass,
   activePlanetClass,
+  activeHamburgerButton,
+  activeHamburgerButtonStart,
+  activeHamburgerButtonEnd,
   iconID,
   iconSurfaceID,
   planetTitleID,
@@ -96,18 +100,23 @@ export const fetchData = () => {
 
 export const toggleHamburgerMenu = () => {
 
-  if (hamburgerButton.classList.contains("hamburger__buttonClass--enabled")){
-    hamburgerButton.classList.remove("hamburger__buttonClass--enabled");
+  if (hamburgerButton.classList.contains(activeHamburgerButton)){
+
     hamburgerMenu.style.display = "none";
     main.style.display = "block";
     secondaryNav.style.display = "flex";
 
   } else {
-    hamburgerButton.classList.add("hamburger__buttonClass--enabled");
+
     hamburgerMenu.style.display = "block";
     main.style.display = "none";
     secondaryNav.style.display = "none";
+
   }
+
+  hamburgerButton.classList.toggle(activeHamburgerButton);
+  hamburgerButtonElements[0].classList.toggle(activeHamburgerButtonStart);
+  hamburgerButtonElements[2].classList.toggle(activeHamburgerButtonEnd);
 
 }
 

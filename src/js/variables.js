@@ -1,4 +1,5 @@
-export const hamburgerButton = document.getElementById("hamburgerButton");
+export const hamburgerButton = document.getElementById("hamburgerButtonWrapper");
+export const hamburgerButtonElements = Array.from(document.querySelectorAll(".hamburgerButton"));
 export const hamburgerMenu = document.getElementById("hamburgerMenu");
 export const main = document.getElementById("main");
 export const secondaryNav = document.getElementById("secondaryNav");
@@ -28,6 +29,9 @@ export const planetsNavbarArray = Array.from(document.querySelectorAll(".planetB
 
 export const activeSectionNavbarClass = "navSecondaryNav__header--enabled";
 export const activePlanetClass = "planetBar__planetName--enabled";
+export const activeHamburgerButton = "topNav__hamburgerButton--isActive";
+export const activeHamburgerButtonStart = "hamburgerButton__halfStart--isActive";
+export const activeHamburgerButtonEnd = "hamburgerButton__halfEnd--isActive";
 
 
 
