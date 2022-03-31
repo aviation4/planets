@@ -11,7 +11,7 @@
 
 ## Summary
 
-This project is a solution to the [Tip calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). The site allows to get familiar with the basic facts about planets of the Solar System.
+This project is a solution to the [Planets fact site challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/planets-fact-site-gazqN8w_f). The site allows to get familiar with the basic facts about planets of the Solar System.
 
 
 **Mobile view:**
